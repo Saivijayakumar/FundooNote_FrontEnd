@@ -1,0 +1,33 @@
+.main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.mainCard{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 35%;
+    border:0.5px solid #ebf0f7;
+    margin: 5% 8%;
+    .loginPage{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 2;
+        padding: 10px;
+        
+        mat-form-field{
+            width: 80%;
+        }
+        .forgotPassword{
+            text-decoration: none;
+            display: flex;
+            align-items: flex-start;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-left: 45px;
+        }
+
+    }
+}
