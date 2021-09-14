@@ -1,0 +1,28 @@
+.mainCard {
+    width: 80%;
+    display: flex;
+    padding: 40px 40px 36px;
+    align-items: center;
+    margin: 5% 8%;
+}
+.rightSide{
+    align-content: center;
+    img{
+        padding-left: 10%;
+        margin-left: 20%;
+    }
+}
+.names{
+    display: flex;
+    justify-content: space-between;
+}
+.email{
+    width: 100%;
+    padding-bottom: 5%;
+}
+.buttons{
+    margin-top: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+

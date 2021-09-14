@@ -1,1 +1,65 @@
-<p>register works!</p>
+<div class="main">
+    <mat-card class="mainCard">
+        <div class="leftSide">
+            <mat-card-title>
+                <p>
+                    <span style="color: #fbbd04;">F</span>
+                    <span style="color: orange">u</span>
+                    <span style="color: blue;">n</span>
+                    <span style="color: rgb(0, 255, 34);">d</span>
+                    <span style="color: rgb(15, 196, 241);">o</span>
+                    <span style="color: rgb(5, 5, 26);">o</span>
+                </p>
+            </mat-card-title>
+            <form>
+                <h1>Create Your Fundoo Note Account</h1>
+                <div class="names">
+                    <mat-form-field appearance="outline">
+                        <mat-label>First name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Last name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div class="input-div">
+                    <mat-form-field appearance="outline" class="email">
+                        <mat-label>Username</mat-label>
+                        <input matInput>
+                        <mat-icon matSuffix>@gmail.com</mat-icon>
+                        <mat-hint>You can use letters,numbers & periods.</mat-hint>
+                      </mat-form-field>
+                </div>
+                <div class="names">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-hint>
+                        Use 8 or more characters with a mix of letters, numbers & symbols
+                    </mat-hint>
+                </div>
+                <div>
+                    <mat-checkbox>show Password</mat-checkbox>
+                </div>
+                <div class="buttons">
+                    <a>Sign in instead</a>
+                    <button mat-flat-button class="next">Next</button>
+                </div>
+            </form>
+        </div>
+        <div class="rightSide">
+            <img src="../../../assets/loginImage.svg"/>
+            <p>One account. All of Note Features working for you.</p>
+        </div>
+    </mat-card>
+</div>
