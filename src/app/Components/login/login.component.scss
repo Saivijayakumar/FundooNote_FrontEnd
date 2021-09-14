@@ -1,26 +1,23 @@
-.main
-{
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
-} 
-.mainCard{
+}
+.mainCard {
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 35%;
-    border:0.5px solid #ebf0f7;
+    border: 0.5px solid #ebf0f7;
     margin: 5% 8%;
-    .loginPage{
+    .loginPage {
         display: flex;
         flex-direction: column;
-        flex-grow: 2;
         padding: 10px;
-        
-        mat-form-field{
+        mat-form-field {
             width: 80%;
         }
-        .forgotPassword{
+        .forgotPassword {
             text-decoration: none;
             display: flex;
             align-items: flex-start;
@@ -28,6 +25,36 @@
             color: #1a73e8;
             margin-left: 45px;
         }
-
+        .buttons {
+            margin-top: 15%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a {
+                margin-left: 45px;
+                color: blue;
+                font-weight: bold;
+            }
+            button {
+                margin-right: 45px;
+                border-radius: 5px;
+                background-color: rgb(19, 19, 231);
+                font-size: 16px;
+                padding: 10px 24px;
+                color: white;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 900px) {
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        a{
+            margin: 0 auto;
+        }
+        button{
+            margin-top: 10px;
+        }
     }
 }
