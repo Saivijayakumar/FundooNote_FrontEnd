@@ -13,17 +13,19 @@
       </mat-card-title>
       <h2>Sign in</h2>
       <h3>Use your Fundoo Account</h3>
-      <form class="loginForm">
+      <form class="loginForm" [formGroup]="RegisterForm">
         <div>
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput>
+            <input matInput formControlName='email'>
+            <mat-error>{{EmailValidation()}}</mat-error>
           </mat-form-field>
         </div>
         <div>
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput>
+            <input matInput formControlName='password'>
+            <mat-error>{{PasswordValidation()}}</mat-error>
           </mat-form-field><br>
           <a href="#" class="forgotPassword">Forgot Password?</a>
         </div>
