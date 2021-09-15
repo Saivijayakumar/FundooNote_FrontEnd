@@ -24,23 +24,23 @@
                         <input matInput>
                     </mat-form-field>
                 </div>
-                <div class="input-div">
+                <div>
                     <mat-form-field appearance="outline" class="email">
                         <mat-label>Username</mat-label>
                         <input matInput>
-                        <mat-icon matSuffix>@gmail.com</mat-icon>
+                        <mat-icon matSuffix class="gmail">@gmail.com</mat-icon>
                         <mat-hint>You can use letters,numbers & periods.</mat-hint>
                       </mat-form-field>
                 </div>
                 <div class="names">
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input matInput>
+                        <input matInput [type]="hide ? 'password' : 'text'">
                     </mat-form-field>
 
                     <mat-form-field appearance="outline">
                         <mat-label>Confirm</mat-label>
-                        <input matInput>
+                        <input matInput [type]="hide ? 'password' : 'text'">
                     </mat-form-field>
                 </div>
                 <div>
@@ -49,17 +49,17 @@
                     </mat-hint>
                 </div>
                 <div>
-                    <mat-checkbox>show Password</mat-checkbox>
+                    <mat-checkbox (change)="hide = !hide">show Password</mat-checkbox>
                 </div>
                 <div class="buttons">
-                    <a>Sign in instead</a>
-                    <button mat-flat-button class="next">Next</button>
+                    <a routerLink="/login">Sign in instead</a>
+                    <button mat-flat-button class="next" routerLink="/login">Next</button>
                 </div>
             </form>
         </div>
         <div class="rightSide">
             <img src="../../../assets/loginImage.svg"/>
-            <p>One account. All of Note Features working for you.</p>
+            <p>One account<br> All of Fundoo Note Features working for you.</p>
         </div>
     </mat-card>
 </div>

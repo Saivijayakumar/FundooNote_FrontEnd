@@ -1,44 +1,54 @@
+@mixin center{
+    display: flex;
+    justify-content: center;
+  }
+  @mixin spaceBetween{
+    display: flex;
+    justify-content: space-between;
+  }
 .main {
-    display: flex;
-    justify-content: center;
-}
-.mainCard {
-    width: 60%;
-    display: flex;
-    padding: 40px 40px 36px;
-    align-items: center;
-    justify-content: center;
-    margin: 5% 8%;
-    border: 0.5px solid #ebf0f7;
-}
-.names {
-    display: flex;
-    justify-content: space-between;
-}
-.email {
-    width: 100%;
-    padding-bottom: 5%;
-}
-h1 {
-    color: #42515f;
-}
-.buttons {
-    margin-top: 15%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    a {
-        color: blue;
-        font-weight: bold;
+    @include center;
+    .mainCard {
+        width: 60%;
+        @include center;
+        padding: 40px 40px 36px;
+        align-items: center;
+        margin-top: 20px;
+        border: 0.5px solid #ebf0f7;
+        h1 {
+            color: #42515f;
+        }
+        .names {
+            @include spaceBetween;
+        }
+        .email {
+            width: 100%;
+            padding-bottom: 5%;
+            .gmail {
+                vertical-align: super;
+            }
+        }
+        .buttons {
+            margin-top: 15%;
+            @include spaceBetween;
+            align-items: center;
+            a {
+                color: blue;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            button {
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: rgb(19, 19, 231);
+                font-size: 16px;
+                padding: 10px 24px;
+                color: white;
+            }
+        }
     }
-    button {
-        border-radius: 5px;
-        background-color: rgb(19, 19, 231);
-        font-size: 16px;
-        padding: 10px 24px;
-        color: white;
-    }
 }
+
 .rightSide {
     display: flex;
     flex-grow: 1;
