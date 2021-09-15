@@ -24,7 +24,10 @@
         <div>
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput formControlName='password'>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName='password'>
+            <button class="iconButton" mat-icon-button matSuffix (click)="hide = !hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
             <mat-error>{{PasswordValidation()}}</mat-error>
           </mat-form-field><br>
           <a href="#" class="forgotPassword">Forgot Password?</a>
