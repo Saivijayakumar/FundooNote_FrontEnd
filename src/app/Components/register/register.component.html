@@ -11,23 +11,26 @@
                     <span style="color: rgb(5, 5, 26);">o</span>
                 </p>
             </mat-card-title>
-            <form>
+            <form [formGroup]="RegisterForm">
                 <h1>Create Your Fundoo Note Account</h1>
                 <div class="names">
                     <mat-form-field appearance="outline">
                         <mat-label>First name</mat-label>
-                        <input matInput>
+                        <input matInput formControlName='firstName'>
+                        <mat-error>{{FirstNameValidation()}}</mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline">
                         <mat-label>Last name</mat-label>
-                        <input matInput>
+                        <input matInput formControlName='lastName'>
+                        <mat-error>{{LastNameValidation()}}</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="outline" class="email">
                         <mat-label>Username</mat-label>
-                        <input matInput>
+                        <input matInput formControlName='email'>
+                        <mat-error>{{EmailValidation()}}</mat-error>
                         <mat-icon matSuffix class="gmail">@gmail.com</mat-icon>
                         <mat-hint>You can use letters,numbers & periods.</mat-hint>
                       </mat-form-field>
@@ -35,12 +38,12 @@
                 <div class="names">
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName='password'>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline">
                         <mat-label>Confirm</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName='confirmPassword'>
                     </mat-form-field>
                 </div>
                 <div>
