@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
     this.RegisterForm = new FormGroup({
       firstName: new FormControl('', [Validators.required, Validators.pattern('^[A-Z]{1}[a-z]{1,}$'), Validators.minLength(3)]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Z]{1}[a-z]{1,}$'), Validators.minLength(3)]),
-      email : new FormControl('', [Validators.required, Validators.email])
+      email : new FormControl('', [Validators.required, Validators.email]),
+      password : new FormControl('',[Validators.required,Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[*.!@$%^&(){}[]:;<>,.?/~_+-=|\).{4,}$'),Validators.minLength(8)])
     })
   }
   FirstNameValidation() {
@@ -51,5 +52,18 @@ export class RegisterComponent implements OnInit {
       return "Not a valid email";
     }
     return null;
+}
+PasswordValidation()
+{
+  if (this.RegisterForm.get('password')?.hasError('required')) {
+    return "Enter password";
+  }
+  else if (this.RegisterForm.get('password')?.hasError('pattern')) {
+    return "password contain atlest 1cap,1samll,1specialsymbol";
+  }
+  else if (this.RegisterForm.get('password')?.hasError('minlength')) {
+    return "Length should be 8 charecter"
+  }
+  return null;
 }
 }
