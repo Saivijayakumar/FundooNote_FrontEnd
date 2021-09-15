@@ -1,17 +1,17 @@
-@mixin center{
+@mixin center {
     display: flex;
     justify-content: center;
-  }
-  @mixin spaceBetween{
+}
+@mixin spaceBetween {
     display: flex;
     justify-content: space-between;
-  }
+}
 .main {
     @include center;
     .mainCard {
         width: 60%;
         @include center;
-        padding: 40px 40px 36px;
+        padding: 20px;
         align-items: center;
         margin-top: 20px;
         border: 0.5px solid #ebf0f7;
@@ -48,10 +48,9 @@
         }
     }
 }
-
 .rightSide {
     display: flex;
-    flex-grow: 1;
+    margin-left: 5%;
     flex-direction: column;
     align-items: center;
     text-align: center;
