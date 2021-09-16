@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { UserServiceService } from 'src/app/Services/UserService/user-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,8 @@ export class RegisterComponent implements OnInit {
   hide = true;
   isVisible = true;
   constructor(
-    private userService : UserServiceService
+    private userService: UserServiceService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -21,10 +23,10 @@ export class RegisterComponent implements OnInit {
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Z]{1}[a-z]{1,}$'), Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[*.!@$%^&(){}[]:;<>,.?/~_+-=|\).{4,}$'), Validators.minLength(8)]),
-      confirmPassword : new FormControl('',[Validators.required])
+      confirmPassword: new FormControl('', [Validators.required])
     })
   }
-  NameValidation(input:string) {
+  NameValidation(input: string) {
     if (this.RegisterForm.get(`${input}`)?.hasError('required')) {
       return `Enter ${input}`;
     }
@@ -58,10 +60,18 @@ export class RegisterComponent implements OnInit {
     return null;
   }
 
-  Register(){
+  Register() {
     this.userService.Register(this.RegisterForm.value)
-    .subscribe((status:any)=>{
-      console.log(status);
-    });
+      .subscribe((status: any) => {
+        console.log(status);
+        if (status.status == true) {
+
+        }
+        this.snackBar.open(`${status.message}`, '', {
+          duration: 3000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'center'
+        });
+      })
   }
 }

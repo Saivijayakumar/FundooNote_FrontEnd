@@ -14,6 +14,8 @@ import {​​​​​​ FormsModule, ReactiveFormsModule }​​​​​​ 
 import { MatIconModule } from "@angular/material/icon";
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
