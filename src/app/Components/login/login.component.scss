@@ -9,6 +9,7 @@
     text-align: center;
     width: 35%;
     border: 0.5px solid #ebf0f7;
+    box-shadow: none;
     margin-top: 30px;
     .loginPage {
         display: flex;
@@ -32,7 +33,7 @@
             align-items: center;
             a {
                 margin-left: 45px;
-                color: blue;
+                color: #1a73e8;
                 text-decoration: none;
                 font-weight: bold;
             }
@@ -40,7 +41,8 @@
                 margin-right: 45px;
                 border-radius: 5px;
                 cursor: pointer;
-                background-color: rgb(19, 19, 231);
+                background-color: #1a73e8;
+                border-color: #1a73e8;
                 font-size: 16px;
                 padding: 10px 24px;
                 color: white;

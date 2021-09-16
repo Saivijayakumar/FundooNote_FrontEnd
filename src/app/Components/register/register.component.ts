@@ -65,13 +65,12 @@ export class RegisterComponent implements OnInit {
       .subscribe((status: any) => {
         console.log(status);
         if (status.status == true) {
-
-        }
         this.snackBar.open(`${status.message}`, '', {
           duration: 3000,
           verticalPosition: 'bottom',
           horizontalPosition: 'center'
         });
+      }
       })
   }
 }
