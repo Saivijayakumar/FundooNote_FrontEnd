@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { UserServiceService } from 'src/app/Services/UserService/user-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -14,13 +16,15 @@ export class RegisterComponent implements OnInit {
   isVisible = true;
   constructor(
     private userService: UserServiceService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
+
   ) { }
 
   ngOnInit(): void {
     this.RegisterForm = new FormGroup({
-      firstName: new FormControl('', [Validators.required, Validators.pattern('^[A-Z]{1}[a-z]{1,}$'), Validators.minLength(3)]),
-      lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Z]{1}[a-z]{1,}$'), Validators.minLength(3)]),
+      firstName: new FormControl('', [Validators.required, Validators.pattern('^[A-Z]{1}[A-Za-z]{1,}$'), Validators.minLength(3)]),
+      lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Z]{1}[A-Za-z]{1,}$'), Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[*.!@$%^&(){}[]:;<>,.?/~_+-=|\).{4,}$'), Validators.minLength(8)]),
       confirmPassword: new FormControl('', [Validators.required])
@@ -65,12 +69,11 @@ export class RegisterComponent implements OnInit {
       .subscribe((status: any) => {
         console.log(status);
         if (status.status == true) {
-        this.snackBar.open(`${status.message}`, '', {
-          duration: 3000,
-          verticalPosition: 'bottom',
-          horizontalPosition: 'center'
-        });
-      }
+          this.router.navigate(['/login']);
+        }
+        this.snackBar.open(`${status.message}`, '', { duration: 3000 });
+      }, error => {
+        this.snackBar.open(`${error.error.message}`, '', { duration: 3000 });
       })
   }
 }

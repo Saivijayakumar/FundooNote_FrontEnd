@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { UserServiceService } from 'src/app/Services/UserService/user-service.service';
 
 @Component({
   selector: 'app-login',
@@ -7,36 +10,37 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  RegisterForm!: FormGroup;
+  LoginForm!: FormGroup;
   hide = true;
-  constructor() { }
+  constructor(
+    private userService:UserServiceService,
+    private snackBar:MatSnackBar,
+    private router :Router
+  ) { }
 
   ngOnInit(): void {
-    this.RegisterForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[*.!@$%^&(){}[]:;<>,.?/~_+-=|\).{4,}$'), Validators.minLength(8)])
+    this.LoginForm = new FormGroup({
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
     })
   }
-
-  EmailValidation() {
-    if (this.RegisterForm.get('email')?.hasError('required')) {
-      return "Add Email";
-    }
-    else if (this.RegisterForm.get('email')?.hasError('email')) {
-      return "Not a valid email";
+  LoginValidation(input:string){
+    if (this.LoginForm.get(`${input}`)?.hasError('required')) {
+      return `Add ${input}`;
     }
     return null;
   }
-  PasswordValidation() {
-    if (this.RegisterForm.get('password')?.hasError('required')) {
-      return "Enter password";
-    }
-    else if (this.RegisterForm.get('password')?.hasError('pattern')) {
-      return "At Least 1cap,1samll,1specialsymbol,1number";
-    }
-    else if (this.RegisterForm.get('password')?.hasError('minlength')) {
-      return "Length should be 8 charecter"
-    }
-    return null;
+  
+  Login() {
+    this.userService.Login(this.LoginForm.value)
+    .subscribe((status:any)=>{
+      console.log(status);
+      if(status.status == true){
+        this.router.navigate(['/login']);
+      }
+      this.snackBar.open(`${status.message}`, '', { duration: 3000 });
+      }, error => {
+        this.snackBar.open(`${error.error.message}`, '', { duration: 3000 });
+      })
   }
 }

@@ -58,7 +58,7 @@
                 </div>
                 <div class="buttons">
                     <a routerLink="/login">Sign in instead</a>
-                    <button mat-flat-button class="next" (click)="Register()">Next</button>
+                    <button mat-flat-button class="next" [disabled]="RegisterForm.invalid" (click)="Register()">Next</button>
                 </div>
             </form>
         </div>

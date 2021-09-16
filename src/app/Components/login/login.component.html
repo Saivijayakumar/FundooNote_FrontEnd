@@ -13,12 +13,12 @@
       </mat-card-title>
       <h2>Sign in</h2>
       <h3>Use your Fundoo Account</h3>
-      <form class="loginForm" [formGroup]="RegisterForm">
+      <form class="loginForm" [formGroup]="LoginForm">
         <div>
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
             <input matInput formControlName='email'>
-            <mat-error>{{EmailValidation()}}</mat-error>
+            <mat-error>{{LoginValidation("email")}}</mat-error>
           </mat-form-field>
         </div>
         <div>
@@ -28,13 +28,13 @@
             <button class="iconButton" mat-icon-button matSuffix (click)="hide = !hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-            <mat-error>{{PasswordValidation()}}</mat-error>
+            <mat-error>{{LoginValidation("password")}}</mat-error>
           </mat-form-field><br>
           <a routerLink="/forgot-password" class="forgotPassword">Forgot Password?</a>
         </div>
         <div class="buttons">
           <a routerLink="/register">Create Account</a>
-          <button mat-flat-button class="login">Login</button>
+          <button mat-flat-button class="login" (click)="Login()">Login</button>
         </div>
       </form>
     </div>
