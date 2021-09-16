@@ -20,29 +20,18 @@ export class RegisterComponent implements OnInit {
       firstName: new FormControl('', [Validators.required, Validators.pattern('^[A-Z]{1}[a-z]{1,}$'), Validators.minLength(3)]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[A-Z]{1}[a-z]{1,}$'), Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[*.!@$%^&(){}[]:;<>,.?/~_+-=|\).{4,}$'), Validators.minLength(8)])
+      password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[*.!@$%^&(){}[]:;<>,.?/~_+-=|\).{4,}$'), Validators.minLength(8)]),
+      confirmPassword : new FormControl('',[Validators.required])
     })
   }
-  FirstNameValidation() {
-    if (this.RegisterForm.get('firstName')?.hasError('required')) {
-      return "Enter First Name";
+  NameValidation(input:string) {
+    if (this.RegisterForm.get(`${input}`)?.hasError('required')) {
+      return `Enter ${input}`;
     }
-    else if (this.RegisterForm.get('firstName')?.hasError('pattern')) {
+    else if (this.RegisterForm.get(`${input}`)?.hasError('pattern')) {
       return "First Letter should capital";
     }
-    else if (this.RegisterForm.get('firstName')?.hasError('minlength')) {
-      return "Should have Atlest 3 charecter"
-    }
-    return null;
-  }
-  LastNameValidation() {
-    if (this.RegisterForm.get('lastName')?.hasError('required')) {
-      return "Enter Last Name";
-    }
-    else if (this.RegisterForm.get('lastName')?.hasError('pattern')) {
-      return "First Letter should capital";
-    }
-    else if (this.RegisterForm.get('lastName')?.hasError('minlength')) {
+    else if (this.RegisterForm.get(`${input}`)?.hasError('minlength')) {
       return "Should have Atlest 3 charecter"
     }
     return null;

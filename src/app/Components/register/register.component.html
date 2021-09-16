@@ -17,13 +17,13 @@
                     <mat-form-field appearance="outline">
                         <mat-label>First name</mat-label>
                         <input matInput formControlName='firstName'>
-                        <mat-error>{{FirstNameValidation()}}</mat-error>
+                        <mat-error>{{NameValidation("firstName")}}</mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline">
                         <mat-label>Last name</mat-label>
                         <input matInput formControlName='lastName'>
-                        <mat-error>{{LastNameValidation()}}</mat-error>
+                        <mat-error>{{NameValidation("lastName")}}</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
@@ -44,7 +44,8 @@
 
                     <mat-form-field appearance="outline" (click)="this.isVisible=false">
                         <mat-label>Confirm</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'" required>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName='confirmPassword' pattern="{{ this.RegisterForm.value.password}}">
+                        <mat-error *ngIf="RegisterForm.controls['confirmPassword'].invalid">Password doesn't match</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
