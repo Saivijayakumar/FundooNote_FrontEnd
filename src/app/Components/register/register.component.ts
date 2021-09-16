@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { UserServiceService } from 'src/app/Services/UserService/user-service.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,10 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   RegisterForm!: FormGroup;
   hide = true;
-  constructor() { }
+  isVisible = true;
+  constructor(
+    private userService : UserServiceService
+  ) { }
 
   ngOnInit(): void {
     this.RegisterForm = new FormGroup({
@@ -63,5 +67,12 @@ export class RegisterComponent implements OnInit {
       return "Length should be 8 charecter"
     }
     return null;
+  }
+
+  Register(){
+    this.userService.Register(this.RegisterForm.value)
+    .subscribe((status:any)=>{
+      console.log(status);
+    });
   }
 }

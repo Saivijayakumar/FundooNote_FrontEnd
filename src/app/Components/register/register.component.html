@@ -31,25 +31,24 @@
                         <mat-label>Username</mat-label>
                         <input matInput formControlName='email'>
                         <mat-error>{{EmailValidation()}}</mat-error>
-                        <!--<mat-icon matSuffix class="gmail">@gmail.com</mat-icon>-->
                         <span matSuffix class="gmail">.com</span>
                         <mat-hint>You can use letters,numbers & periods.</mat-hint>
                     </mat-form-field>
                 </div>
                 <div class="names">
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="outline" (click)="this.isVisible=false">
                         <mat-label>Password</mat-label>
                         <input matInput [type]="hide ? 'password' : 'text'" formControlName='password'>
                         <mat-error>{{PasswordValidation()}}</mat-error>
                     </mat-form-field>
 
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="outline" (click)="this.isVisible=false">
                         <mat-label>Confirm</mat-label>
                         <input matInput [type]="hide ? 'password' : 'text'" required>
                     </mat-form-field>
                 </div>
                 <div>
-                    <mat-hint>
+                    <mat-hint [style.display]="isVisible ? 'block' : 'none'">
                         Use 8 or more characters with a mix of letters, numbers & symbols
                     </mat-hint>
                 </div>
@@ -58,7 +57,7 @@
                 </div>
                 <div class="buttons">
                     <a routerLink="/login">Sign in instead</a>
-                    <button mat-flat-button class="next" routerLink="/login">Next</button>
+                    <button mat-flat-button class="next" (click)="Register()">Next</button>
                 </div>
             </form>
         </div>

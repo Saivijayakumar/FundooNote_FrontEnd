@@ -13,7 +13,7 @@ import { LoginComponent } from './Components/login/login.component';
 import {​​​​​​ FormsModule, ReactiveFormsModule }​​​​​​ from'@angular/forms';
 import { MatIconModule } from "@angular/material/icon";
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,8 @@ import { ForgotPasswordComponent } from './Components/forgot-password/forgot-pas
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
