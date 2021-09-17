@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/Services/UserService/user-service.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private userService:UserServiceService,
     private snackBar:MatSnackBar,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +37,7 @@ export class ForgotPasswordComponent implements OnInit {
     .subscribe((status:any)=>{
       console.log(status);
       if(status.status == true){
-        
+        this.router.navigate(['/reset-password']);
       }
       this.snackBar.open(`${status.message}`, '', { duration: 3000 });
       }, error => {
