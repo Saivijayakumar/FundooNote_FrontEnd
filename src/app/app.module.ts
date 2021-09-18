@@ -16,6 +16,7 @@ import { ForgotPasswordComponent } from './Components/forgot-password/forgot-pas
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
+import {​ FlexLayoutModule }​ from '@angular/flex-layout';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
     ReactiveFormsModule,
     MatIconModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

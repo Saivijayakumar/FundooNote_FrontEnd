@@ -22,7 +22,7 @@
             @include spaceBetween;
         }
         .nameside{
-            padding-left:10px;
+            margin-left:10px;
         }
         .email {
             width: 100%;
@@ -64,5 +64,8 @@
 @media only screen and (max-width: 600px) {
     .names {
         flex-direction: column;
+    }
+    .nameside{
+        margin-left:0px;
     }
 }

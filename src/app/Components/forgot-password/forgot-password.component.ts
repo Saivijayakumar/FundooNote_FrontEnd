@@ -37,7 +37,8 @@ export class ForgotPasswordComponent implements OnInit {
     .subscribe((status:any)=>{
       console.log(status);
       if(status.status == true){
-        this.router.navigate(['/reset-password']);
+        localStorage.setItem("token",`${status.data}`);
+        localStorage.setItem("userName",`${this.ForgotPasswordForm.value.email}`);
       }
       this.snackBar.open(`${status.message}`, '', { duration: 3000 });
       }, error => {

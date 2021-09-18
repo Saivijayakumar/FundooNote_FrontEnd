@@ -32,4 +32,13 @@ export class UserServiceService {
   {
     return this.httpService.post(`${environment.baseUrl}/api/ForgotPassword?email=${data}`);
   }
+  RestPassword(data:any)
+  {
+    const params = {
+      Email: localStorage.getItem("userName"),
+      NewPassword: data.password,
+      ConfirmNewPassword:data.confirmPassword
+    }
+    return this.httpService.put(`${environment.baseUrl}/api/ResetPassword`,params);
+  }
 }

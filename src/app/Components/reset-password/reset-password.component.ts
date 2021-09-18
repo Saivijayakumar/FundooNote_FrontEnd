@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { UserServiceService } from 'src/app/Services/UserService/user-service.service';
 
 
 @Component({
@@ -12,11 +15,14 @@ export class ResetPasswordComponent implements OnInit {
   hide1 = true;
   hide2 = true;
   
-  constructor() { }
+  constructor(
+    private userService:UserServiceService,
+    private snackBar:MatSnackBar,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.ResetPasswordForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[*.!@$%^&(){}[]:;<>,.?/~_+-=|\).{4,}$'), Validators.minLength(8)]),
       confirmPassword: new FormControl('', [Validators.required])
     })
@@ -33,9 +39,19 @@ export class ResetPasswordComponent implements OnInit {
     else if (this.ResetPasswordForm.get('password')?.hasError('minlength')) {
       return "Length should be 8 charecter"
     }
-    else if (this.ResetPasswordForm.get('email')?.hasError('email')) {
-      return "Not a valid email";
-    }
     return null;
+  }
+  RestPassword() {
+    this.userService.RestPassword(this.ResetPasswordForm.value)
+    .subscribe((status:any)=>{
+      console.log(status);
+      if(status.status == true){
+        //localStorage.clear();
+        this.router.navigate(['/login']);
+      }
+      this.snackBar.open(`${status.message}`, '', { duration: 3000 });
+      }, error => {
+        this.snackBar.open(`${error.error.message}`, '', { duration: 3000 });
+      })
   }
 }
