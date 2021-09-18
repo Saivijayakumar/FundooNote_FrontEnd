@@ -33,7 +33,7 @@ export class ForgotPasswordComponent implements OnInit {
     return null;
   }
   Next() {
-    this.userService.Next(this.ForgotPasswordForm.value)
+    this.userService.Next(this.ForgotPasswordForm.value.email)
     .subscribe((status:any)=>{
       console.log(status);
       if(status.status == true){

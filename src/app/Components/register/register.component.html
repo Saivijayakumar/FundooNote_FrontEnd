@@ -20,7 +20,7 @@
                         <mat-error>{{NameValidation("firstName")}}</mat-error>
                     </mat-form-field>
 
-                    <mat-form-field appearance="outline">
+                    <mat-form-field class="nameside" appearance="outline">
                         <mat-label>Last name</mat-label>
                         <input matInput formControlName='lastName'>
                         <mat-error>{{NameValidation("lastName")}}</mat-error>
@@ -31,7 +31,6 @@
                         <mat-label>Username</mat-label>
                         <input matInput formControlName='email'>
                         <mat-error>{{EmailValidation()}}</mat-error>
-                        <span matSuffix class="gmail">.com</span>
                         <mat-hint>You can use letters,numbers & periods.</mat-hint>
                     </mat-form-field>
                 </div>
@@ -42,14 +41,14 @@
                         <mat-error>{{PasswordValidation()}}</mat-error>
                     </mat-form-field>
 
-                    <mat-form-field appearance="outline" (click)="this.isVisible=false">
+                    <mat-form-field class="nameside" appearance="outline" (click)="this.isVisible=false">
                         <mat-label>Confirm</mat-label>
                         <input matInput [type]="hide ? 'password' : 'text'" formControlName='confirmPassword' pattern="{{ this.RegisterForm.value.password}}">
                         <mat-error *ngIf="RegisterForm.controls['confirmPassword'].invalid">Password doesn't match</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
-                    <mat-hint [style.display]="isVisible ? 'block' : 'none'">
+                    <mat-hint>
                         Use 8 or more characters with a mix of letters, numbers & symbols
                     </mat-hint>
                 </div>

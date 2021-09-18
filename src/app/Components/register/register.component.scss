@@ -9,7 +9,6 @@
 .main {
     @include center;
     .mainCard {
-        width: 60%;
         @include center;
         padding: 20px;
         align-items: center;
@@ -22,12 +21,12 @@
         .names {
             @include spaceBetween;
         }
+        .nameside{
+            padding-left:10px;
+        }
         .email {
             width: 100%;
             padding-bottom: 5%;
-            .gmail {
-                vertical-align: super;
-            }
         }
         .buttons {
             margin-top: 15%;

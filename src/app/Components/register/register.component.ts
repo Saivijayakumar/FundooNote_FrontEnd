@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
       return "Enter password";
     }
     else if (this.RegisterForm.get('password')?.hasError('pattern')) {
-      return "At Least 1cap,1samll,1specialsymbol,1number";
+      return "1cap,1samll,1specialsymbol,1number";
     }
     else if (this.RegisterForm.get('password')?.hasError('minlength')) {
       return "Length should be 8 charecter"
