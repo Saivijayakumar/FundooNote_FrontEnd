@@ -46,7 +46,7 @@ export class ResetPasswordComponent implements OnInit {
     .subscribe((status:any)=>{
       console.log(status);
       if(status.status == true){
-        //localStorage.clear();
+        localStorage.clear();
         this.router.navigate(['/login']);
       }
       this.snackBar.open(`${status.message}`, '', { duration: 3000 });

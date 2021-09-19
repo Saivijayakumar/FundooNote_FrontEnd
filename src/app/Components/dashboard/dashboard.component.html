@@ -1,0 +1,69 @@
+<div class="mainContainer">
+    <mat-toolbar>
+        <div class="fundooimg">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>
+                <img src="../../../assets/fundoo.png" width="30px" height="35px" [style.padding-right.px]=10/>
+            </span>
+            <i>
+                <span style="color: #fbbd04;">F</span>
+                <span style="color: orange">u</span>
+                <span style="color: blue;">n</span>
+                <span style="color: rgb(0, 255, 34);">d</span>
+                <span style="color: rgb(15, 196, 241);">o</span>
+                <span style="color: rgb(5, 5, 26);">o</span>
+            </i>
+        </div>
+        <div>
+            <mat-form-field class="example-full-width" appearance="fill" [style.width.px]=650>
+                <input matInput placeholder="Search">
+                <mat-icon class="material-icons" matPrefix [style.margin-right.px]=12>search</mat-icon>
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon *ngIf="!isGrid" (click)="isGrid=true">view_list</mat-icon>
+                <mat-icon *ngIf="isGrid" (click)="isGrid=false">grid_view</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon [matMenuTriggerFor]="accountMenu">account_circle</mat-icon>
+                <mat-menu #accountMenu="matMenu" class="account-menu">
+                    <img src="../../../assets/account.png" width="60px" height="60px" style="margin-top: 25px;">
+                     <p >dkdkdkv  kdkdk</p>
+                    <p class="email">rmakffdd</p>
+                    <mat-divider style="width: 100%; margin: 0px; padding: 0px;" class="divider"></mat-divider>
+                    <button mat-raised-button >Logout</button>
+                </mat-menu>
+            </button>
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container class="sidenavMain">
+        <mat-sidenav #sidenav mode="side" [(opened)]="opened" >
+            <mat-nav-list>
+                <mat-list-item>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons">lightbulb_outline</mat-icon>
+                    <i mat-line>Notes</i>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons">notifications_none</mat-icon>
+                    <i mat-line>Reminders</i>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined">edit</mat-icon>
+                    <i mat-line>Edit labels</i>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined">archive</mat-icon>
+                    <i mat-line>Archive</i>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons">delete_outline</mat-icon>
+                    <i mat-line>Trash</i>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>Main content</mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,59 @@
+@mixin flexFroperties {
+    display: flex;
+    align-items: center;
+}
+mat-toolbar {
+    @include flexFroperties;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid rgb(218, 220, 224);
+}
+.fundooimg {
+    @include flexFroperties;
+}
+::ng-deep .mat-form-field {
+    .mat-form-field-flex {
+        @include flexFroperties;
+        height: 50%;
+        border-radius: 10px;
+        margin-top: 2em;
+        font-size: 15px;
+        padding: 0.25em;
+    }
+    .mat-form-field-underline {
+        width: 0;
+    }
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 0px 0px 0px 0px;
+    padding: .75em .75em 0 .75em;
+}
+
+.sidenavMain {
+    min-height: 500px;
+}
+mat-sidenav:not(.mat-drawer-opened) {
+    transform: translate3d(0, 0, 0) !important;
+    visibility: visible !important;
+    width: 70px !important;
+    overflow: hidden !important;
+}
+mat-sidenav {
+    width: 250px;
+    border-right: 0;
+}
+mat-sidenav-content {
+    padding-left: 100px;
+}
+.sidenavimg {
+    padding: 0px;
+    margin: 0px;
+}
+mat-list-item:hover {
+    background-color: #feefc3;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
