@@ -24,12 +24,12 @@
         </div>
         <div>
             <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon *ngIf="!isGrid" (click)="isGrid=true">view_list</mat-icon>
-                <mat-icon *ngIf="isGrid" (click)="isGrid=false">grid_view</mat-icon>
+                <mat-icon *ngIf="!GridView" (click)="GridView=true">view_list</mat-icon>
+                <mat-icon *ngIf="GridView" (click)="GridView=false">grid_view</mat-icon>
             </button>
             <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
                 <mat-icon [matMenuTriggerFor]="accountMenu">account_circle</mat-icon>
-                <mat-menu #accountMenu="matMenu" class="account-menu">
+                <mat-menu #accountMenu="matMenu">
                     <img src="../../../assets/account.png" width="60px" height="60px" style="margin-top: 25px;">
                      <p >dkdkdkv  kdkdk</p>
                     <p class="email">rmakffdd</p>
@@ -64,6 +64,6 @@
                 </mat-list-item>
             </mat-nav-list>
         </mat-sidenav>
-        <mat-sidenav-content>Main content</mat-sidenav-content>
+        <mat-sidenav-content align="center" >Main content</mat-sidenav-content>
     </mat-sidenav-container>
 </div>

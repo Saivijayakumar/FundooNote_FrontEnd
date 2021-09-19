@@ -15,21 +15,36 @@ mat-toolbar {
 ::ng-deep .mat-form-field {
     .mat-form-field-flex {
         @include flexFroperties;
-        height: 50%;
-        border-radius: 10px;
+        height: 55%;
+        border-radius: 10px !important;
         margin-top: 2em;
         font-size: 15px;
-        padding: 0.25em;
+        padding: 0 !important;
     }
     .mat-form-field-underline {
         width: 0;
     }
 }
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-    border-radius: 0px 0px 0px 0px;
-    padding: .75em .75em 0 .75em;
+::ng-deep .mat-form-field-prefix .mat-icon, .mat-form-field-suffix .mat-icon {
+    font-size: 150%;
+    line-height: 1.3;
+    padding-left: 15px;
 }
-
+.email {
+    margin-top: -10px;
+    color: #5f6368;
+}
+.mat-raised-button {
+    margin-top: 18px !important;
+    margin-bottom: 5px !important;
+}
+::ng-deep .mat-menu-content {
+    text-align: center !important;
+    padding: 40px;
+}
+.mat-menu-item {
+    text-align: center;
+}
 .sidenavMain {
     min-height: 500px;
 }
