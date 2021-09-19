@@ -36,7 +36,16 @@ export class LoginComponent implements OnInit {
     .subscribe((status:any)=>{
       console.log(status);
       if(status.status == true){
-        this.router.navigate(['/login']);
+        var params={
+          UserId:status.userData.userId,
+          FirstName:status.userData.firstName,
+          LastName:status.userData.lastName,
+          Email:status.userData.email,
+          Token:status.data
+        }        
+        localStorage.setItem('UserDetails',JSON.stringify(params));
+
+        this.router.navigate(['/dashboard']);
       }
       this.snackBar.open(`${status.message}`, '', { duration: 3000 });
       }, error => {

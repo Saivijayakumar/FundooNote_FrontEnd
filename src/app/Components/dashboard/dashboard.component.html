@@ -31,10 +31,10 @@
                 <mat-icon [matMenuTriggerFor]="accountMenu">account_circle</mat-icon>
                 <mat-menu #accountMenu="matMenu">
                     <img src="../../../assets/account.png" width="60px" height="60px" style="margin-top: 25px;">
-                     <p >dkdkdkv  kdkdk</p>
-                    <p class="email">rmakffdd</p>
+                     <p >{{UserData.FirstName}} {{UserData.LastName}}</p>
+                    <p class="email">{{UserData.Email}}</p>
                     <mat-divider style="width: 100%; margin: 0px; padding: 0px;" class="divider"></mat-divider>
-                    <button mat-raised-button >Logout</button>
+                    <button mat-raised-button routerLink="/login">Logout</button>
                 </mat-menu>
             </button>
         </div>
