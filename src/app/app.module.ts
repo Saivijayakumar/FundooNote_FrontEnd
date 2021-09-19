@@ -10,6 +10,7 @@ import {​​​​​​ FormsModule, ReactiveFormsModule }​​​​​​ 
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { MaterialModule } from './material/material.module';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MaterialModule } from './material/material.module';
     RegisterComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
