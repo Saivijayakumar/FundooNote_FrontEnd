@@ -23,7 +23,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     DashboardComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
