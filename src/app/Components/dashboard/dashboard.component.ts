@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   opened: boolean = true;
   GridView:boolean = false;
+
   constructor(private route : Router) { }
   UserData = JSON.parse(localStorage.getItem("UserDetails")!);
   ngOnInit(): void {
   }
   Logout(){
-    localStorage.clear();
+    localStorage.removeItem("UserDetails");
     this.route.navigate(['/login']).then(() => {
       window.location.reload();
     });

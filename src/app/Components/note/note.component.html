@@ -1,0 +1,21 @@
+<mat-card *ngIf="smallNote" class="up">
+    <mat-card-title class="dummy-card-title" (click)="showNote()">
+       <input type="text" placeholder="Take a Note..."> 
+    </mat-card-title>
+    <mat-card-subtitle class="">
+        <mat-icon mat-list-icon class= "material-icons-outlined">check_box</mat-icon>
+        <mat-icon mat-list-icon class= "material-icons-outlined">crop_original</mat-icon>  
+    </mat-card-subtitle>
+</mat-card>
+<mat-card class="Card" *ngIf="bigNote">
+    <mat-card-title class="card-title">
+        <textarea cdkTextareaAutosize placeholder="Title" class="textarea"></textarea>
+        <mat-icon mat-list-icon class= "class="material-icons">push_pin</mat-icon>
+    </mat-card-title>
+    <mat-card-content class="card-content">
+       <textarea cdkTextareaAutosize placeholder="Take a Note..." class="textarea"></textarea>
+    </mat-card-content>
+    <mat-card-footer>
+        <app-note-icon></app-note-icon>
+    </mat-card-footer>
+</mat-card> 

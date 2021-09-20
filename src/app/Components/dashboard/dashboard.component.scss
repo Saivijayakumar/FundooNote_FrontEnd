@@ -41,10 +41,15 @@ mat-toolbar {
 }
 ::ng-deep .mat-menu-content {
     text-align: center !important;
-    padding: 40px;
+    padding: 4em;
 }
 .mat-menu-item {
     text-align: center;
+}
+.divider{
+    width: 100%; 
+    margin: 0px;
+    padding: 0px;
 }
 .sidenavMain {
     min-height: 500px;
@@ -60,7 +65,8 @@ mat-sidenav {
     border-right: 0;
 }
 mat-sidenav-content {
-    padding-left: 100px;
+    display: flex;
+    justify-content: center;
 }
 .sidenavimg {
     padding: 0px;

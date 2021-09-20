@@ -11,6 +11,8 @@ import { ForgotPasswordComponent } from './Components/forgot-password/forgot-pas
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { MaterialModule } from './material/material.module';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { NoteComponent } from './Components/note/note.component';
+import { NoteIconComponent } from './Components/note-icon/note-icon.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    NoteComponent,
+    NoteIconComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

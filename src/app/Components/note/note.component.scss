@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
+@mixin Flex {
+    display: flex;
+    flex-direction: row;
+}
+::ng-deep .mat-drawer-content {
+    overflow: unset;
+}
+.title {
+    font-size: 16px;
+    flex-grow: 12;
+    padding-top: 10px;
+}
+
+.icon {
+    display: flex;
+    flex-grow: 3;
+    justify-content: space-around;
+}
+.mat-expansion-panel-header-description {
+    display: unset;
+    margin-right: 0;
+}
+.up {
+    text-align: start !important;
+}
+mat-card {
+    @include Flex;
+    min-width: 500px;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+.mat-card:not([class*="mat-elevation-z"]) {
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+}
+.dummy-card-title {
+    font-size: 13px;
+    flex-grow: 12;
+    height: 10px !important;
+    input {
+        outline: none;
+        height: 100%;
+        border: none;
+        font-size: 13px;
+    }
+}
+.Card {
+    display: flex;
+    flex-direction: column;
+}
+.textarea {
+    width: 400px;
+    border: none;
+    font-size: 16px;
+    margin-left: 0px;
+    outline: none;
+}
+.card-title {
+    @include Flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.card-content {
+    @include Flex;
+    justify-content: space-between;
+    width: 100%;
+}
+mat-card-footer {
+    width: 100%;
+}

@@ -30,10 +30,10 @@
             <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
                 <mat-icon [matMenuTriggerFor]="accountMenu">account_circle</mat-icon>
                 <mat-menu #accountMenu="matMenu">
-                    <img src="../../../assets/account.png" width="60px" height="60px" style="margin-top: 25px;">
+                    <img src="../../../assets/account.png" width="60px" height="60px" style="margin-top: 25px;" />
                     <p>{{UserData.FirstName}} {{UserData.LastName}}</p>
                     <p class="email">{{UserData.Email}}</p>
-                    <mat-divider style="width: 100%; margin: 0px; padding: 0px;" class="divider"></mat-divider>
+                    <mat-divider class="divider"></mat-divider>
                     <button mat-raised-button (click)="Logout()">Logout</button>
                 </mat-menu>
             </button>
@@ -43,27 +43,27 @@
         <mat-sidenav #sidenav mode="side" [(opened)]="opened">
             <mat-nav-list>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons">lightbulb_outline</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">lightbulb_outline</mat-icon>
                     <i mat-line>Notes</i>
                 </mat-list-item>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons">notifications_none</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">notifications_none</mat-icon>
                     <i mat-line>Reminders</i>
                 </mat-list-item>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined">edit</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">edit</mat-icon>
                     <i mat-line>Edit labels</i>
                 </mat-list-item>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined">archive</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">archive</mat-icon>
                     <i mat-line>Archive</i>
                 </mat-list-item>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons">delete_outline</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">delete_outline</mat-icon>
                     <i mat-line>Trash</i>
                 </mat-list-item>
             </mat-nav-list>
         </mat-sidenav>
-        <mat-sidenav-content align="center">Main content</mat-sidenav-content>
+        <mat-sidenav-content align="center"><app-note align="center"></app-note></mat-sidenav-content>
     </mat-sidenav-container>
 </div>
