@@ -12,7 +12,10 @@
     flex-grow: 12;
     padding-top: 10px;
 }
-
+i {
+    color: #8b8a8a;
+    font-size: 20px;
+}
 .icon {
     display: flex;
     flex-grow: 3;
@@ -53,7 +56,7 @@ mat-card {
 .textarea {
     width: 400px;
     border: none;
-    font-size: 16px;
+    font-size: 13px;
     margin-left: 0px;
     outline: none;
 }

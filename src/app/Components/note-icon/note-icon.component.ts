@@ -16,7 +16,6 @@ export class NoteIconComponent implements OnInit {
   }
   Close()
   {
-    this.note.bigNote = false;
-    this.note.smallNote=true;
+    this.note.show = true;
   }
 }

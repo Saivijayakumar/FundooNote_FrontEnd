@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NoteComponent implements OnInit {
   smallNote:boolean = true;
   bigNote:boolean = false;
+  show:boolean = true;
   constructor() { }
 
   ngOnInit(): void {
