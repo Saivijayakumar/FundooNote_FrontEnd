@@ -12,6 +12,10 @@
     flex-grow: 12;
     padding-top: 10px;
 }
+.sideiconone{
+    padding-right: 10px;
+    padding-top: 10px;
+}
 i {
     color: #8b8a8a;
     font-size: 20px;
@@ -25,7 +29,7 @@ i {
     display: unset;
     margin-right: 0;
 }
-.up {
+.upCard {
     text-align: start !important;
 }
 mat-card {
@@ -34,6 +38,9 @@ mat-card {
     align-items: center;
     border-radius: 10px;
     margin-top: 25px;
+    form{
+        width: 100%;
+    }
 }
 .mat-card:not([class*="mat-elevation-z"]) {
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);

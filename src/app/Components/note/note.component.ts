@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-note',
@@ -6,17 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note.component.scss']
 })
 export class NoteComponent implements OnInit {
-  smallNote:boolean = true;
-  bigNote:boolean = false;
   show:boolean = true;
+  NoteForm !: FormGroup;
   constructor() { }
 
   ngOnInit(): void {
+    this.NoteForm = new FormGroup({
+      Title: new FormControl(),
+      Description:new FormControl()
+    });
   }
-  showNote()
-  {
-    this.smallNote = false;
-    this.bigNote = true;
-  }
-
 }

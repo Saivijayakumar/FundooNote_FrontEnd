@@ -14,10 +14,10 @@
     <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon mat-list-icon class="material-icons-outlined">archive</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="accountMenu">
-        <mat-menu #accountMenu="matMenu">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
+    <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="moremenu">
+        <mat-menu #moremenu="matMenu" class="account-menu">
+            <button mat-menu-item style="font-size: 17px;">Add Label</button>
+            <button mat-menu-item style="font-size: 17px;">Delete Note</button>
         </mat-menu>
         <mat-icon mat-list-icon class="material-icons-outlined">more_vert</mat-icon>
     </button>
@@ -27,5 +27,5 @@
     <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon mat-list-icon class="material-icons-outlined">undo</mat-icon>
     </button>
-    <button mat-button color="primary" (click)="Close()">Close</button>
+    <button mat-button color="primary" (click)="CreateNote()">Close</button>
 </div>

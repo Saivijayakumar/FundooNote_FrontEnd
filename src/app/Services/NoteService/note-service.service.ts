@@ -6,14 +6,16 @@ import { HttpServiceService } from '../HttpService/http-service.service';
   providedIn: 'root'
 })
 export class NoteServiceService {
+  userDetails = JSON.parse(localStorage.getItem('UserDetails')!);
 
   constructor(private httpService : HttpServiceService) { }
 
-  header = {
-    headers:{ Authorization:"Bearer " + localStorage.getItem('Token') }
+  header:any = {
+    headers:{ Authorization:"Bearer " + this.userDetails.Token }
   };
 
   CreateNote(data:any){
-    return this.httpService.post(`${environment.baseUrl}/api/register`,data,true);
+    data.UserId = this.userDetails.UserId;
+    return this.httpService.post(`${environment.baseUrl}/api/Note`,data,true,this.header);
   }
 }
