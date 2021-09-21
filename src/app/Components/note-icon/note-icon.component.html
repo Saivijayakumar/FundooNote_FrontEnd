@@ -11,10 +11,10 @@
                 <p>9:00AM</p>
             </button>
         </mat-menu>
-        <mat-icon mat-list-icon class="material-icons-outlined">notifications_none</mat-icon>
+        <mat-icon mat-list-icon class="material-icons-outlined"matTooltip="Remind me">notifications_none</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon">
-        <mat-icon mat-list-icon class="material-icons-outlined">person_add</mat-icon>
+        <mat-icon mat-list-icon class="material-icons-outlined" matTooltip="collaborater">person_add</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="Color">
         <mat-menu #Color="matMenu" yPosition="above">
@@ -23,19 +23,20 @@
                 <mat-icon mat-list-icon *ngIf="colors[i].check">done</mat-icon>
             </span>
         </mat-menu>
-        <mat-icon mat-list-icon class="material-icons-outlined">color_lens</mat-icon>
+        <mat-icon mat-list-icon class="material-icons-outlined" matTooltip="Change Color">color_lens</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon">
-        <mat-icon mat-list-icon class="material-icons-outlined">image</mat-icon>
+        <mat-icon mat-list-icon class="material-icons-outlined" matTooltip="Add Image">image</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon">
-        <mat-icon mat-list-icon class="material-icons-outlined">archive</mat-icon>
+        <mat-icon mat-list-icon class="material-icons-outlined" matTooltip="Archive">archive</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="moreMenu">
         <mat-menu #moreMenu="matMenu">
             <button mat-menu-item>Add Label</button>
+            <button mat-menu-item>Delete Label</button>
         </mat-menu>
-        <mat-icon mat-list-icon class="material-icons-outlined">more_vert</mat-icon>
+        <mat-icon mat-list-icon class="material-icons-outlined" matTooltip="More">more_vert</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon mat-list-icon class="material-icons-outlined">redo</mat-icon>

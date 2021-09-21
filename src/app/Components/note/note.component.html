@@ -11,7 +11,10 @@
     <form [formGroup]="NoteForm">
         <mat-card-title class="card-title">
             <textarea cdkTextareaAutosize placeholder="Title" class="textarea" formControlName ="Title" [style.background-color]="noteColor"></textarea>
-            <i class="material-icons">push_pin</i>
+            <button mat-icon-button class="example-icon favorite-icon" (click)="changePin()">
+                <i class="material-icons" *ngIf="!pin">push_pin</i>
+                <mat-icon mat-list-icon class= "material-icons-outlined" style="color: rgb(136, 133, 133);" *ngIf="pin">push_pin</mat-icon>
+            </button>
         </mat-card-title>
         <mat-card-content class="card-content">
             <textarea cdkTextareaAutosize placeholder="Take a note.." class="textarea"
