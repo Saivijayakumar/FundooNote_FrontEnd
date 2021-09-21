@@ -1,5 +1,11 @@
 <div class="icon">
-    <button mat-icon-button class="example-icon favorite-icon">
+    <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="Remainder">
+        <mat-menu #Remainder="matMenu" class="r-option">
+            <p class="r-par">Remainder:</p>
+            <button mat-menu-item class="remainder-but"><p>Later today</p><p>8:00PM</p></button>
+            <button mat-menu-item class="remainder-but"><p>Tomorrow</p><p>8:00AM</p></button>
+            <button mat-menu-item class="remainder-but"><p>Next Week</p></button>
+        </mat-menu>
         <mat-icon mat-list-icon class="material-icons-outlined">notifications_none</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon">
@@ -14,10 +20,9 @@
     <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon mat-list-icon class="material-icons-outlined">archive</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="moremenu">
-        <mat-menu #moremenu="matMenu" class="account-menu">
-            <button mat-menu-item style="font-size: 17px;">Add Label</button>
-            <button mat-menu-item style="font-size: 17px;">Delete Note</button>
+    <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="moreMenu">
+        <mat-menu #moreMenu="matMenu">
+            <button mat-menu-item>Add Label</button>
         </mat-menu>
         <mat-icon mat-list-icon class="material-icons-outlined">more_vert</mat-icon>
     </button>
@@ -27,5 +32,5 @@
     <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon mat-list-icon class="material-icons-outlined">undo</mat-icon>
     </button>
-    <button mat-button color="primary" (click)="CreateNote()">Close</button>
+    <button mat-button (click)="CreateNote()">Close</button>
 </div>
