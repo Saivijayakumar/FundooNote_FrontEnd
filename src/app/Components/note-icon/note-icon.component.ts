@@ -10,12 +10,20 @@ import { NoteComponent } from '../note/note.component';
   styleUrls: ['./note-icon.component.scss']
 })
 export class NoteIconComponent implements OnInit {
+
+  colors: any[] = [{ "color": "#fff", "toolTip": "default", "check": true },{"color": "#F28B82","toolTip": "Red","check": false},{"color": "#FFF475","toolTip": "Yellow","check": false},{"color": "#FBBC04","toolTip": "Orange","check": false},{"color": "#CCFF90","toolTip": "Green","check": false},{"color": "#AECBFA","toolTip": "Dark Blue","check": false},{"color": "#CBF0F8","toolTip": "Blue","check": false},{"color": "#E6C9A8","toolTip": "Brown","check": false}];
   constructor(
     private note: NoteComponent,
     private noteService: NoteServiceService,
     private snackBar: MatSnackBar
   ) { }
   ngOnInit(): void {
+  }
+
+  ChangeColor(color: any) {
+    this.note.noteColor = color;
+    for (var val of this.colors)
+      val.check = val.color == color ? true : false;
   }
   CreateNote() {
     this.note.show = true;
@@ -25,6 +33,6 @@ export class NoteIconComponent implements OnInit {
       }, error => {
         this.snackBar.open(`${error.error.message}`, '', { duration: 3000, verticalPosition: 'bottom', horizontalPosition: 'left' });
       });
-      this.note.NoteForm.reset();
+    this.note.NoteForm.reset();
   }
 }

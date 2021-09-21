@@ -1,17 +1,28 @@
 <div class="icon">
     <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="Remainder">
         <mat-menu #Remainder="matMenu" class="r-option">
-            <p class="r-par">Remainder:</p>
-            <button mat-menu-item class="remainder-but"><p>Later today</p><p>8:00PM</p></button>
-            <button mat-menu-item class="remainder-but"><p>Tomorrow</p><p>8:00AM</p></button>
-            <button mat-menu-item class="remainder-but"><p>Next Week</p></button>
+            <p class="remindHead">Remainder:</p>
+            <button mat-menu-item class="remindbutton">
+                <p>Later today</p>
+                <p>9:00PM</p>
+            </button>
+            <button mat-menu-item class="remindbutton">
+                <p>Tomorrow</p>
+                <p>9:00AM</p>
+            </button>
         </mat-menu>
         <mat-icon mat-list-icon class="material-icons-outlined">notifications_none</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon mat-list-icon class="material-icons-outlined">person_add</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon favorite-icon">
+    <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="Color">
+        <mat-menu #Color="matMenu" yPosition="above">
+            <span class="colors" (click)="ChangeColor(colors[i].color)" [style.background-color]="colors[i].color"
+                matTooltip="{{colors[i].toolTip}}" *ngFor="let color of colors;let i=index">
+                <mat-icon mat-list-icon *ngIf="colors[i].check">done</mat-icon>
+            </span>
+        </mat-menu>
         <mat-icon mat-list-icon class="material-icons-outlined">color_lens</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon">

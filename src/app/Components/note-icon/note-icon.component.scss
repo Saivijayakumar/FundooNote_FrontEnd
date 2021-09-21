@@ -9,12 +9,15 @@ mat-icon {
     color: #8b8a8a;
     font-size: 18px;
 }
-::ng-deep #mat-menu-panel-2 .mat-menu-content {
+//lable
+::ng-deep #mat-menu-panel-3 .mat-menu-content,
+.mat-menu-panel {
     padding: 0px;
 }
-::ng-deep #mat-menu-panel-2 {
+::ng-deep #mat-menu-panel-3 {
     min-height: 0px !important;
 }
+//Remainder
 ::ng-deep #mat-menu-panel-1 .mat-menu-content,
 .mat-menu-panel {
     padding: 0px;
@@ -23,12 +26,44 @@ mat-icon {
 ::ng-deep #mat-menu-panel-1 {
     padding: 0px;
     width: 200px !important;
-    .r-par {
+    .remindHead {
         padding-left: 1em;
         padding-top: 10px;
     }
 }
-.remainder-but {
+.remindbutton {
     display: flex;
     justify-content: space-between;
+}
+//color
+::ng-deep #mat-menu-panel-2 .mat-menu-content,
+.mat-menu-panel {
+    padding: 0px;
+}
+::ng-deep #mat-menu-panel-2
+{
+    width: 130px;
+    border-radius: 8px !important;
+    padding: 5px;
+}
+::ng-deep .ng-tns-c92-4
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.colors
+{
+    height: 25px;
+    width:25px;
+    border-radius: 50%;
+    margin: 1px;
+    border: 1px solid pink;
+    
+}
+.colors:hover
+{
+    cursor: pointer;
+    border: 1px solid black;
 }

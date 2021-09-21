@@ -8,6 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class NoteComponent implements OnInit {
   show:boolean = true;
+  noteColor = "white";
   NoteForm !: FormGroup;
   constructor() { }
 
