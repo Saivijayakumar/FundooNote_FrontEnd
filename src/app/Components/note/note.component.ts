@@ -11,8 +11,10 @@ export class NoteComponent implements OnInit {
   show:boolean = true;
   noteColor = "white";
   pin:boolean=true;
+  isReminder=false;
+  Reminder="Today";
   NoteForm !: FormGroup;
-  constructor(private snackBar : MatSnackBar) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.NoteForm = new FormGroup({
@@ -22,5 +24,9 @@ export class NoteComponent implements OnInit {
   }
   changePin(){
     this.pin = !this.pin;
+  }
+  RemoveRemider()
+  {
+    this.isReminder = false;
   }
 }
