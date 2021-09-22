@@ -43,27 +43,42 @@
         <mat-sidenav #sidenav mode="side" [(opened)]="opened">
             <mat-nav-list>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">lightbulb_outline</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()"
+                        (mouseleave)="sidenav.toggle()">lightbulb_outline</mat-icon>
                     <i mat-line>Notes</i>
                 </mat-list-item>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">notifications_none</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()"
+                        (mouseleave)="sidenav.toggle()">notifications_none</mat-icon>
                     <i mat-line>Reminders</i>
                 </mat-list-item>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">edit</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"
+                        (mouseleave)="sidenav.toggle()">edit</mat-icon>
                     <i mat-line>Edit labels</i>
                 </mat-list-item>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">archive</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"
+                        (mouseleave)="sidenav.toggle()">archive</mat-icon>
                     <i mat-line>Archive</i>
                 </mat-list-item>
                 <mat-list-item>
-                    <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()" (mouseleave)="sidenav.toggle()">delete_outline</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()"
+                        (mouseleave)="sidenav.toggle()">delete_outline</mat-icon>
                     <i mat-line>Trash</i>
                 </mat-list-item>
             </mat-nav-list>
         </mat-sidenav>
-        <mat-sidenav-content align="center"><app-note align="center"></app-note></mat-sidenav-content>
+        <mat-sidenav-content align="center">
+            <app-note align="center"></app-note>
+            <!--<div style="display: flex;justify-content: flex-start;">
+                <mat-card-title>
+                    <p>Hello</p>
+                    <mat-card-content>
+                        <p>nothing you can be</p>
+                    </mat-card-content>
+                </mat-card-title>
+            </div>-->
+        </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

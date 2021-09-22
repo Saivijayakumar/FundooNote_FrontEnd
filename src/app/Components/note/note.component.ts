@@ -10,11 +10,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class NoteComponent implements OnInit {
   show:boolean = true;
   noteColor = "white";
-  pin:boolean=true;
+  pin:boolean=false;
   isReminder=false;
-  Reminder="Today";
+  Reminder="";
   NoteForm !: FormGroup;
-  constructor() { }
+  constructor(private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.NoteForm = new FormGroup({
@@ -28,5 +28,6 @@ export class NoteComponent implements OnInit {
   RemoveRemider()
   {
     this.isReminder = false;
+    this.snackBar.open('Reminder Deleted', '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left'});
   }
 }

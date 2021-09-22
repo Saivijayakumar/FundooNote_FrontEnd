@@ -22,8 +22,9 @@
     <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon mat-list-icon class="material-icons-outlined" matTooltip="Add Image">image</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon favorite-icon">
-        <mat-icon mat-list-icon class="material-icons-outlined" matTooltip="Archive">archive</mat-icon>
+    <button mat-icon-button class="example-icon favorite-icon" (click)="archiveNote()" >
+        <mat-icon mat-list-icon class="material-icons-outlined" matTooltip="Archive" *ngIf="!archive" >archive</mat-icon>
+        <mat-icon mat-list-icon matTooltip="Archive" *ngIf="archive" >archive</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="moreMenu">
         <mat-menu #moreMenu="matMenu">
