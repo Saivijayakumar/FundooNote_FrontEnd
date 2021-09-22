@@ -69,16 +69,13 @@
                 </mat-list-item>
             </mat-nav-list>
         </mat-sidenav>
-        <mat-sidenav-content align="center">
-            <app-note align="center"></app-note>
-            <!--<div style="display: flex;justify-content: flex-start;">
-                <mat-card-title>
-                    <p>Hello</p>
-                    <mat-card-content>
-                        <p>nothing you can be</p>
-                    </mat-card-content>
-                </mat-card-title>
-            </div>-->
+        <mat-sidenav-content>
+            <div class="mainContent">
+                <app-note></app-note>
+            </div>
+            
+                <app-get-notes></app-get-notes>
+            
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

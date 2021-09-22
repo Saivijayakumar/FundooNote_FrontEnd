@@ -1,13 +1,18 @@
-.icon {
+.icons{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
-}
-mat-icon {
-    color: #8b8a8a;
-    font-size: 18px;
+    align-items: center;
+    div
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    mat-icon{
+        color:#212121;
+        font-size: 18px;
+    }
 }
 //lable
 ::ng-deep #mat-menu-panel-3 .mat-menu-content,
@@ -18,12 +23,12 @@ mat-icon {
     min-height: 0px !important;
 }
 //Remainder
-::ng-deep #mat-menu-panel-4 .mat-menu-content,
+::ng-deep #mat-menu-panel-1 .mat-menu-content,
 .mat-menu-panel {
     padding: 0px;
     text-align: start !important;
 }
-::ng-deep #mat-menu-panel-4 {
+::ng-deep #mat-menu-panel-1 {
     padding: 0px;
     width: 200px !important;
     .remindHead {
@@ -36,11 +41,11 @@ mat-icon {
     justify-content: space-between;
 }
 //color
-::ng-deep #mat-menu-panel-5 .mat-menu-content,
+::ng-deep #mat-menu-panel-2 .mat-menu-content,
 .mat-menu-panel {
     padding: 0px;
 }
-::ng-deep #mat-menu-panel-5
+::ng-deep #mat-menu-panel-2
 {
     width: 130px;
     border-radius: 8px !important;

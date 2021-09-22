@@ -18,4 +18,8 @@ export class NoteServiceService {
     data.UserId = this.userDetails.UserId;
     return this.httpService.post(`${environment.baseUrl}/api/Note`,data,true,this.header);
   }
+  GetNote(){
+    let data = this.userDetails.UserId;
+    return this.httpService.post(`${environment.baseUrl}/api/GetNotes?userId=${data}`,null,true,this.header);
+  }
 }

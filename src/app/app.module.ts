@@ -14,6 +14,9 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { NoteComponent } from './Components/note/note.component';
 import { NoteIconComponent } from './Components/note-icon/note-icon.component';
 import { CollaboraterDialogComponent } from './Components/collaborater-dialog/collaborater-dialog.component';
+import { GetNotesComponent } from './Components/get-notes/get-notes.component';
+import { GetNotesIconComponent } from './Components/get-notes-icon/get-notes-icon.component';
+
 
 
 @NgModule({
@@ -26,7 +29,9 @@ import { CollaboraterDialogComponent } from './Components/collaborater-dialog/co
     DashboardComponent,
     NoteComponent,
     NoteIconComponent,
-    CollaboraterDialogComponent
+    CollaboraterDialogComponent,
+    GetNotesComponent,
+    GetNotesIconComponent
   ],
   entryComponents:[CollaboraterDialogComponent],
   imports: [

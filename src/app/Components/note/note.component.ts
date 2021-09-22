@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+@Injectable({
+  providedIn:'root'
+})
 @Component({
   selector: 'app-note',
   templateUrl: './note.component.html',

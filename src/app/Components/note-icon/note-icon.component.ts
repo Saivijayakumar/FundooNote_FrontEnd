@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -48,6 +47,7 @@ export class NoteIconComponent implements OnInit {
         this.note.noteColor="#fff";
         this.archive=false;
         this.note.Reminder="";
+        this.note.isReminder=false;
         this.note.pin = false;
       }, error => {
         this.snackBar.open(`${error.error.message}`, '', { duration: 3000, verticalPosition: 'bottom', horizontalPosition: 'left' });

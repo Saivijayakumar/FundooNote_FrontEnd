@@ -3,9 +3,8 @@
 }
 .acButtons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-content: space-around;
-    background-color: rgb(173, 172, 172);
 }
 .title {
     margin: 5px !important;
@@ -13,11 +12,25 @@
 ::ng-deep .mat-dialog-container {
     width: 600px !important;
     border-radius: 15px !important;
+    //padding: 10px 0px 10px 0px;
+    //overflow-x: hidden;
+    //overflow-y: hidden;
 }
 input{
     width: 100%;
-    outline-color: white;
+    border: unset;
 }
 button{
     padding:10px;
+    background-color: whitesmoke;
+    border: white;
+    cursor: pointer;
 }
+
+input:focus { 
+    outline: none !important;
+    border-color: white;
+ }
+ ::ng-deep #cdk-overlay-2{
+     padding:0;
+ }
