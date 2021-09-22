@@ -13,6 +13,7 @@ import { MaterialModule } from './material/material.module';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { NoteComponent } from './Components/note/note.component';
 import { NoteIconComponent } from './Components/note-icon/note-icon.component';
+import { CollaboraterDialogComponent } from './Components/collaborater-dialog/collaborater-dialog.component';
 
 
 @NgModule({
@@ -24,8 +25,10 @@ import { NoteIconComponent } from './Components/note-icon/note-icon.component';
     ResetPasswordComponent,
     DashboardComponent,
     NoteComponent,
-    NoteIconComponent
+    NoteIconComponent,
+    CollaboraterDialogComponent
   ],
+  entryComponents:[CollaboraterDialogComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,

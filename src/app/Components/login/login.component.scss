@@ -48,12 +48,12 @@
         }
     }
 }
-.iconButton{
+.iconButton {
     background-color: white;
     border: white;
 }
 @media only screen and (max-width: 900px) {
-    .mainCard{
+    .mainCard {
         width: 35%;
     }
     .buttons {
@@ -69,15 +69,13 @@
         }
     }
 }
-@media only screen and (max-width: 360px)
-{
-    .forgotPassword{
+@media only screen and (max-width: 360px) {
+    .forgotPassword {
         margin: 0px !important;
     }
 }
-@media only screen and (max-width: 411px)
-{
-    .forgotPassword{
+@media only screen and (max-width: 411px) {
+    .forgotPassword {
         margin-left: 15px !important;
     }
 }

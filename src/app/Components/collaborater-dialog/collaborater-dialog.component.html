@@ -1,0 +1,18 @@
+<h2 mat-dialog-title class="title">Collaborators</h2>
+<mat-divider></mat-divider>
+<mat-dialog-content class="set-height">
+
+    <div class="row" style="padding-top:10px;">
+        <img src="../../../assets/account.png" width="35px" height="35px" >
+        <p style="padding-left:5px;">{{UserData.FirstName}} {{UserData.LastName}} (owner) <br>{{UserData.Email}}</p>
+    </div>
+    <div class="row" style=" margin-top: 10px; margin-bottom: 20px;">
+        <i class="material-icons" width="30px" height="30px"
+            style="margin-right: 10px; border: 2px solid rgb(122, 121, 121); border-radius: 50%; padding: 5px; color: rgb(141, 139, 139);">person_add</i>
+        <input placeholder="Person or email to share with" style="font-weight: 200;">
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions class="acButtons">
+    <button mat-raise-button mat-dialog-close>Cancel</button>
+    <button mat-raise-button mat-dialog-close>save</button>
+</mat-dialog-actions>

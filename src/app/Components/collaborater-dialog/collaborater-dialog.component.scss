@@ -1,0 +1,23 @@
+.row {
+    display: flex;
+}
+.acButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-content: space-around;
+    background-color: rgb(173, 172, 172);
+}
+.title {
+    margin: 5px !important;
+}
+::ng-deep .mat-dialog-container {
+    width: 600px !important;
+    border-radius: 15px !important;
+}
+input{
+    width: 100%;
+    outline-color: white;
+}
+button{
+    padding:10px;
+}
