@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   opened: boolean = true;
   GridView:boolean = false;
   labels:any = [];
+  choice:string='';
 
   constructor(private route : Router ,private noteService : NoteServiceService) { }
   UserData = JSON.parse(localStorage.getItem("UserDetails")!);
@@ -29,5 +30,10 @@ export class DashboardComponent implements OnInit {
       this.labels=status.data;
       console.log(this.labels);
     });
+  }
+  Remind()
+  {
+    this.choice = 'Reminder';
+    console.log(this.choice);
   }
 }

@@ -1,16 +1,14 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
 
-@Injectable({
-  providedIn:'root'
-})
+
 @Component({
-  selector: 'app-get-notes',
-  templateUrl: './get-notes.component.html',
-  styleUrls: ['./get-notes.component.scss']
+  selector: 'app-reminder-notes',
+  templateUrl: './reminder-notes.component.html',
+  styleUrls: ['./reminder-notes.component.scss']
 })
-export class GetNotesComponent implements OnInit {
+export class ReminderNotesComponent implements OnInit {
 
   notes:any=[];
   constructor(private snackBar:MatSnackBar, private noteService:NoteServiceService) {}
@@ -20,16 +18,16 @@ export class GetNotesComponent implements OnInit {
   show:boolean=true;
   Reminder="";
   ngOnInit(): void {
-    this.getNotes();
+    this.Remindernote();
   }
   pinNote()
   {
     this.pinned=!this.pinned;
   }
-  getNotes()
+  Remindernote()
    {
      console.log("getnote");
-     this.noteService.GetNote().subscribe((result: any) => {
+     this.noteService.ReminderNotes().subscribe((result: any) => {
       this.notes=result.data;
       console.log(this.notes);
     });
@@ -39,9 +37,10 @@ export class GetNotesComponent implements OnInit {
     this.isReminder = false;
     this.Reminder="";
     this.snackBar.open('Reminder Deleted', '', {
-      duration: 2000,
+      duration: 3000,
       verticalPosition: 'bottom',
       horizontalPosition: 'left'
     });
   }
+
 }

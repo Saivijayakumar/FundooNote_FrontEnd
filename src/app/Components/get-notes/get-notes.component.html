@@ -22,12 +22,14 @@
                     </div>
                 </mat-card-content>
                 <mat-card-footer>
+                    <div style="padding-left: 10px;">
                     <span *ngIf="note.remindMe!=null" class="reminderLabel">
                         <mat-icon mat-list-icon class="material-icons-outlined">watch_later</mat-icon>
                         <p>{{note.remindMe}}</p>
                         <mat-icon mat-list-icon class="material-icons-outlined cursor" (click)="RemoveReminder()">close
                         </mat-icon>
                     </span>
+                </div>
                     <div>
                         <app-get-notes-icon></app-get-notes-icon>
                     </div>

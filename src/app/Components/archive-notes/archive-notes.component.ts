@@ -1,16 +1,13 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
 
-@Injectable({
-  providedIn:'root'
-})
 @Component({
-  selector: 'app-get-notes',
-  templateUrl: './get-notes.component.html',
-  styleUrls: ['./get-notes.component.scss']
+  selector: 'app-archive-notes',
+  templateUrl: './archive-notes.component.html',
+  styleUrls: ['./archive-notes.component.scss']
 })
-export class GetNotesComponent implements OnInit {
+export class ArchiveNotesComponent implements OnInit {
 
   notes:any=[];
   constructor(private snackBar:MatSnackBar, private noteService:NoteServiceService) {}
@@ -20,16 +17,16 @@ export class GetNotesComponent implements OnInit {
   show:boolean=true;
   Reminder="";
   ngOnInit(): void {
-    this.getNotes();
+    this.Archive();
   }
   pinNote()
   {
     this.pinned=!this.pinned;
   }
-  getNotes()
+  Archive()
    {
      console.log("getnote");
-     this.noteService.GetNote().subscribe((result: any) => {
+     this.noteService.ArchiveNotes().subscribe((result: any) => {
       this.notes=result.data;
       console.log(this.notes);
     });
@@ -44,4 +41,5 @@ export class GetNotesComponent implements OnInit {
       horizontalPosition: 'left'
     });
   }
+
 }

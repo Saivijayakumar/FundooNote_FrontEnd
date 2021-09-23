@@ -42,14 +42,14 @@
     <mat-sidenav-container class="sidenavMain">
         <mat-sidenav #sidenav mode="side" [(opened)]="opened">
             <mat-nav-list>
-                <mat-list-item>
+                <mat-list-item (click)="choice = 'getnotes'" >
                     <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()"
                         (mouseleave)="sidenav.toggle()">lightbulb_outline</mat-icon>
                     <i mat-line>Notes</i>
                 </mat-list-item>
-                <mat-list-item>
+                <mat-list-item  (click)="choice = 'Reminder'" >
                     <mat-icon mat-list-icon class="sidenavimg material-icons" (mouseenter)="sidenav.toggle()"
-                        (mouseleave)="sidenav.toggle()">notifications_none</mat-icon>
+                        (mouseleave)="sidenav.toggle()"  >notifications_none</mat-icon>
                     <i mat-line>Reminders</i>
                 </mat-list-item>
                 <mat-list-item *ngFor="let label of labels" >
@@ -62,7 +62,7 @@
                         (mouseleave)="sidenav.toggle()">edit</mat-icon>
                     <i mat-line>Edit labels</i>
                 </mat-list-item>
-                <mat-list-item>
+                <mat-list-item (click)="choice = 'archive'" >
                     <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"
                         (mouseleave)="sidenav.toggle()">archive</mat-icon>
                     <i mat-line>Archive</i>
@@ -78,12 +78,14 @@
             <div class="mainContent">
                 <app-note></app-note>
             </div>
-            <div class="get_notes">
+            <div class="get_notes" *ngIf = "choice == 'getnotes' || choice == ''">
                 <app-get-notes></app-get-notes>
             </div>
-            <br>
-            <div class="get_notes">
-                <app-get-notes></app-get-notes>
+            <div class="get_notes" *ngIf = "choice == 'Reminder'">
+                <app-reminder-notes></app-reminder-notes>
+            </div>
+            <div class="get_notes" *ngIf = "choice == 'archive'">
+                <app-archive-notes></app-archive-notes>
             </div>
         </mat-sidenav-content>
     </mat-sidenav-container>
