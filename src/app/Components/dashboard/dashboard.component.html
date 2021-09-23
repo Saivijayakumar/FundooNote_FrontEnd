@@ -52,6 +52,11 @@
                         (mouseleave)="sidenav.toggle()">notifications_none</mat-icon>
                     <i mat-line>Reminders</i>
                 </mat-list-item>
+                <mat-list-item *ngFor="let label of labels" >
+                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"
+                    (mouseleave)="sidenav.toggle()">label_outline</mat-icon>
+                    <i mat-line>{{label.labelName}}</i>
+                </mat-list-item>
                 <mat-list-item>
                     <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"
                         (mouseleave)="sidenav.toggle()">edit</mat-icon>
@@ -73,9 +78,13 @@
             <div class="mainContent">
                 <app-note></app-note>
             </div>
-            
+            <div class="get_notes">
                 <app-get-notes></app-get-notes>
-            
+            </div>
+            <br>
+            <div class="get_notes">
+                <app-get-notes></app-get-notes>
+            </div>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

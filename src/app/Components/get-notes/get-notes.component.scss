@@ -1,18 +1,25 @@
-.notes
-{
-    margin-left: 100px;
-    margin-top: 30px;
- } 
+.notes{
+    margin-left: 5px;
+}
+ .allNotes
+ {
+     display: flex;
+     flex-flow: row wrap;
+     margin-left: 100px;
+     margin-right: 10px;
+     margin-top: 10px;
+     //change
+ }
 ::ng-deep .getNoteCard
 {
-    //chnge
+    display: flex;
+    flex-direction: column;
     width:200px;
     max-height: 500px;
     min-height: 95px;
     align-items: center;
     border-radius: 16px;
     margin-top: 25px;
-    background-color: #F28B82;
     border: 1px solid #E0E0E0 ;
 }
 

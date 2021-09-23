@@ -22,4 +22,8 @@ export class NoteServiceService {
     let data = this.userDetails.UserId;
     return this.httpService.post(`${environment.baseUrl}/api/GetNotes?userId=${data}`,null,true,this.header);
   }
+  GetLabels()
+  {
+    return this.httpService.post(`${environment.baseUrl}/api/GetAllLabels?userId=${this.userDetails.UserId}`,null,true,this.header);
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
 import { CollaboraterDialogComponent } from '../collaborater-dialog/collaborater-dialog.component';
 import { NoteComponent } from '../note/note.component';
@@ -19,7 +20,8 @@ export class NoteIconComponent implements OnInit {
     private note: NoteComponent,
     private noteService: NoteServiceService,
     private snackBar: MatSnackBar,
-    public dialog : MatDialog
+    private dialog : MatDialog,
+    private route:Router
   ) { }
   ngOnInit(): void {
   }
@@ -31,13 +33,13 @@ export class NoteIconComponent implements OnInit {
   }
   CreateNote() {
     this.note.show = true;
-    let noteColor = this.note.noteColor=="white"?null:this.note.noteColor;
+    let noteColor = this.note.noteColor=="white"?"#fff":this.note.noteColor;
     let noteReminder = this.note.Reminder==""?null:this.note.Reminder;
     const data = {
       Title:this.note.NoteForm.value.Title,
       Description:this.note.NoteForm.value.Description,
       Color:noteColor,
-      Reminder:noteReminder,
+      remindMe:noteReminder,
       Pin:this.note.pin,
       Archieve:this.archive
     }
@@ -49,10 +51,14 @@ export class NoteIconComponent implements OnInit {
         this.note.Reminder="";
         this.note.isReminder=false;
         this.note.pin = false;
+
       }, error => {
         this.snackBar.open(`${error.error.message}`, '', { duration: 3000, verticalPosition: 'bottom', horizontalPosition: 'left' });
       });
     this.note.NoteForm.reset();
+    this.route.navigate(['/dashboard']).then(() => {
+      window.location.reload();
+    });
   }
   addReminder(rem:any)
   {

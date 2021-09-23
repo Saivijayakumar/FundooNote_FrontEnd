@@ -9,38 +9,35 @@ import { NoteServiceService } from 'src/app/Services/NoteService/note-service.se
 })
 export class GetNotesComponent implements OnInit {
 
-  constructor(private snackBar:MatSnackBar,private notesService:NoteServiceService) { }
+  notes:any=[];
+  constructor(private snackBar:MatSnackBar, private noteService:NoteServiceService) {}
   noteColor= "#fff";
   pinned = false;
   isReminder=false;
   Reminder="";
-  hovered = false;
-  userNotes:any = [];
   ngOnInit(): void {
-    this.GetNote();
+    this.getNotes();
   }
   pinNote()
   {
     this.pinned=!this.pinned;
   }
+  getNotes()
+   {
+     console.log("getnote");
+     this.noteService.GetNote().subscribe((result: any) => {
+      this.notes=result.data;
+      console.log(this.notes);
+    });
+   }
   RemoveReminder()
   {
     this.isReminder = false;
+    this.Reminder="";
     this.snackBar.open('Reminder Deleted', '', {
       duration: 2000,
       verticalPosition: 'bottom',
       horizontalPosition: 'left'
     });
   }
-  GetNote()
-  {
-    this.notesService.GetNote()
-  .subscribe(
-    (status: any) => 
-    {
-    console.log(status.data);
-    this.userNotes=status.data;
-    })
-  }
-
 }

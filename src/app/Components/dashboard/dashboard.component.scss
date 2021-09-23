@@ -53,12 +53,17 @@ mat-toolbar {
 }
 .sidenavMain {
     min-height: 500px;
+    background-color: white;
 }
 mat-sidenav:not(.mat-drawer-opened) {
     transform: translate3d(0, 0, 0) !important;
     visibility: visible !important;
     width: 70px !important;
     overflow: hidden !important;
+    
+}
+::ng-deep .mat-drawer-inner-container{
+    overflow-x: hidden !important;
 }
 mat-sidenav {
     width: 250px;
@@ -89,4 +94,11 @@ mat-list-item:hover {
 }
 .fordiv{
     display: flex;
+}
+::ng-deep .get_notes
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
 }
