@@ -1,73 +1,65 @@
-.icons{
+@mixin MenuPadding {
+    .mat-menu-content {
+        padding: 0px !important;
+    }
+}
+.icons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     align-items: center;
-    div
-    {
+    div {
         display: flex;
         justify-content: space-between;
     }
-    mat-icon{
-        color:#212121;
+    mat-icon {
+        color: #212121;
         font-size: 18px;
     }
 }
-//lable
-::ng-deep #mat-menu-panel-3 .mat-menu-content,
-.mat-menu-panel {
-    padding: 0px;
-}
-::ng-deep #mat-menu-panel-3 {
-    min-height: 0px !important;
-}
-//Remainder
-::ng-deep #mat-menu-panel-1 .mat-menu-content,
-.mat-menu-panel {
-    padding: 0px;
-    text-align: start !important;
-}
-::ng-deep #mat-menu-panel-1 {
-    padding: 0px;
-    width: 200px !important;
-    .remindHead {
-        padding-left: 1em;
-        padding-top: 10px;
-    }
-}
-.remindbutton {
-    display: flex;
-    justify-content: space-between;
-}
-//color
-::ng-deep #mat-menu-panel-2 .mat-menu-content,
-.mat-menu-panel {
-    padding: 0px;
-}
-::ng-deep #mat-menu-panel-2
-{
-    width: 130px;
+::ng-deep .get_note_reminder_menu {
+    width: 500px;
     border-radius: 8px !important;
-    padding: 5px;
+    @include MenuPadding;
 }
-::ng-deep .ng-tns-c92-4
-{
+
+::ng-deep .get_note_note_menu {
+    width: 100px;
+    border-radius: 8px !important;
+    min-height: auto !important;
+    @include MenuPadding;
+}
+::ng-deep .get_note_color_menu {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-}
-.colors
-{
-    height: 25px;
-    width:25px;
-    border-radius: 50%;
-    margin: 1px;
-    border: 1px solid rgb(190, 188, 188);
+    width: 125px;
+    border-radius: 8px !important;
     
 }
-.colors:hover
-{
+button .mat-menu-item {
+    width: 100%;
+    height: 40px;
+}
+::ng-deep .mat-menu-content:not(:empty) {
+    padding: 3px !important;
+}
+.mat-menu-item {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+.colors {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 2px;
+    border: 1px solid rgb(252, 169, 183);
+}
+.colors:hover {
     cursor: pointer;
     border: 1px solid black;
+}
+::ng-deep .mat-icon-button {
+    width: 37px !important;
 }

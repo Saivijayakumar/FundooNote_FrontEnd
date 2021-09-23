@@ -32,4 +32,8 @@ export class NoteServiceService {
   {
     return this.httpService.post(`${environment.baseUrl}/api/Get Archive Notes?userId=${this.userDetails.UserId}`, null, true, this.header);
   }
+  TrashNotes()
+  {
+    return this.httpService.post(`${environment.baseUrl}/api/Get Trash Notes?userId=${this.userDetails.UserId}`, null, true, this.header);
+  }
 }

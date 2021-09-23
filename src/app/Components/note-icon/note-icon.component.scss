@@ -10,20 +10,21 @@ mat-icon {
     font-size: 18px;
 }
 //lable
-::ng-deep #mat-menu-panel-3 .mat-menu-content,
+::ng-deep .LableInNote .mat-menu-content,
 .mat-menu-panel {
     padding: 0px;
 }
-::ng-deep #mat-menu-panel-3 {
+::ng-deep .LableInNote {
     min-height: 0px !important;
+    border-radius: 8px !important;
 }
 //Remainder
-::ng-deep #mat-menu-panel-4 .mat-menu-content,
+::ng-deep .ReminderInNote .mat-menu-content,
 .mat-menu-panel {
     padding: 0px;
     text-align: start !important;
 }
-::ng-deep #mat-menu-panel-4 {
+::ng-deep .ReminderInNote {
     padding: 0px;
     width: 200px !important;
     .remindHead {
@@ -36,19 +37,19 @@ mat-icon {
     justify-content: space-between;
 }
 //color
-::ng-deep #mat-menu-panel-5 .mat-menu-content,
+::ng-deep .ColorInNote .mat-menu-content,
 .mat-menu-panel {
     padding: 0px;
 }
-::ng-deep #mat-menu-panel-5
+::ng-deep .ColorInNote
 {
     width: 130px;
     border-radius: 8px !important;
     padding: 5px;
 }
-::ng-deep .ng-tns-c92-4
+::ng-deep .ColorInNote .mat-menu-content
 {
-    display: flex;
+    display: flex ;
     flex-wrap: wrap;
     justify-content: space-between;
 }

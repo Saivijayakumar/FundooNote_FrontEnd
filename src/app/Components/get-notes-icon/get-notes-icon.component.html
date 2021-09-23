@@ -31,7 +31,7 @@
 <mat-menu #reminderMenu="matMenu" class="get_note_reminder_menu">
     <button mat-menu-item [disabled]="true">Reminder:</button>
     <button (click)="AddReminder(rem)" mat-menu-item *ngFor="let rem of reminders;let i=index"
-        ><span>{{rem.Text}}</span><span style="color:#9DBDE1">{{rem.Time}}</span></button>
+        ><span>{{rem.Text}}</span><span style="color:#bebec2">{{rem.Time}}</span></button>
 </mat-menu>
 <mat-menu #colorMenu="matMenu" yPosition="above">
     <div class="get_note_color_menu">

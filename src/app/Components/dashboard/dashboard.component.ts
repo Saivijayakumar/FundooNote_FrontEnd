@@ -31,9 +31,4 @@ export class DashboardComponent implements OnInit {
       console.log(this.labels);
     });
   }
-  Remind()
-  {
-    this.choice = 'Reminder';
-    console.log(this.choice);
-  }
 }

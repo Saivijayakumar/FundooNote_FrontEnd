@@ -1,6 +1,6 @@
 <div class="icon">
     <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="Remainder">
-        <mat-menu #Remainder="matMenu">
+        <mat-menu #Remainder="matMenu" class="ReminderInNote" >
             <p class="remindHead">Remainder:</p>
             <button mat-menu-item *ngFor="let rem of reminders;let i=index" (click)="addReminder(rem)"
                 class="remindbutton"><span style="color: black;">{{rem.Text}}</span><span style="color:#bebec2">{{rem.Time}}</span></button>
@@ -10,8 +10,8 @@
     <button mat-icon-button class="example-icon favorite-icon">
         <mat-icon mat-list-icon class="material-icons-outlined" matTooltip="collaborater" (click)="openDialog()" >person_add</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="Color">
-        <mat-menu #Color="matMenu" yPosition="above">
+    <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="Color" class="MainColor"   >
+        <mat-menu #Color="matMenu" yPosition="above" class="ColorInNote" >
             <span class="colors" (click)="ChangeColor(colors[i].color)" [style.background-color]="colors[i].color"
                 matTooltip="{{colors[i].toolTip}}" *ngFor="let color of colors;let i=index">
                 <mat-icon mat-list-icon *ngIf="colors[i].check" style="padding-top: 5px;">done</mat-icon>
@@ -27,7 +27,7 @@
         <mat-icon mat-list-icon matTooltip="Archive" *ngIf="archive" >archive</mat-icon>
     </button>
     <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="moreMenu">
-        <mat-menu #moreMenu="matMenu">
+        <mat-menu #moreMenu="matMenu" class="LableInNote">
             <button mat-menu-item>Add Label</button>
             <button mat-menu-item>Delete Label</button>
         </mat-menu>

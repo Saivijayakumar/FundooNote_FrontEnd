@@ -12,7 +12,7 @@
  }
 ::ng-deep .getNoteCard
 {
-    display: flex;
+
     flex-direction: column;
     width:200px;
     max-height: 500px;
@@ -57,4 +57,9 @@
 }  
 .noteTitle{
     width: auto !important;
+}
+.noteDescription{
+    overflow: hidden !important;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }

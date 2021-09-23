@@ -1,0 +1,70 @@
+.EmptyTrash{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    align-items: center;
+}
+.notes{
+    margin-left: 20px;
+    border-radius: 15px;
+}
+ .allNotes
+ {
+     display: flex;
+     flex-flow: row wrap;
+     margin-left: 100px;
+     margin-right: 20px;
+     margin-top: 50px;
+ }
+ .displayRow
+ {
+     display: flex;
+     flex-flow: row wrap;
+ }
+ ::ng-deep .getIcons
+ {
+     padding: 0;
+ }
+::ng-deep .getNoteCard
+{
+    width:190px;
+    max-height: 1000px;
+    min-height: 130px;
+    border-radius: 13px!important;
+    align-items: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    border: 1px solid #E0E0E0 ;
+}
+
+::ng-deep .card_title
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    word-wrap:break-word;
+    justify-content: space-between;
+    width: 100%;
+}
+::ng-deep .noteDescription
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap !important;
+    overflow: hidden;
+    
+}
+.noteDescription{
+    
+    overflow: hidden !important;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+.pinLabel{
+    color: #5f6368;
+    letter-spacing: .07272727em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: .6875rem;
+    font-weight: 500;
+    line-height: 1rem;
+}

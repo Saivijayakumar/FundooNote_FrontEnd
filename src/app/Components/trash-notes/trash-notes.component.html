@@ -1,0 +1,38 @@
+<div class="EmptyTrash">
+    <p style="padding-top: 10px;padding-right: 10px;" >
+        Notes in the Recycle Bin are deleted after 7 days.
+    </p>
+    <button mat-stroked-button color="blue">EmptyTrash</button>
+</div>
+<div class="allNotes">
+    <div *ngFor="let note of notes">
+        <div class="notes" id={{note.noteId}} (mouseenter)="hovered=true" (mouseleave)="hovered=false">
+            <mat-card class="getNoteCard" [style.background-color]="note.color">
+                <div>
+                    <mat-card-title>
+                        <div class="card_title">
+                            <div id="noteTitle" class="noteTitle">
+                                <h2>{{note.title}}</h2>
+                            </div>
+                        </div>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <div id="noteDescription" class="noteDescription">
+                            <p>{{note.description}}</p>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-footer *ngIf="hovered==true">
+                        <div class="getIcons" >
+                            <button mat-icon-button class="example-icon favorite-icon" matTooltip="Delete Forever">
+                                <mat-icon mat-list-icon class="material-icons">delete_forever</mat-icon>
+                            </button>
+                            <button mat-icon-button class="example-icon favorite-icon" matTooltip="Restore">
+                                <mat-icon mat-list-icon class=" material-icons">restore_from_trash</mat-icon>
+                            </button>
+                        </div>
+                    </mat-card-footer>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
