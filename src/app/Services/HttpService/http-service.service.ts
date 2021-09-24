@@ -18,5 +18,8 @@ export class HttpServiceService {
     console.log(url, data + "value");
     return this.http.put(url, data, isHeaderRequired && headers)
   }
+  delete(url: string, isHeaderRequired: any = false, headers: any = false) {
+    return this.http.put(url, isHeaderRequired && headers)
+  }
 
 }

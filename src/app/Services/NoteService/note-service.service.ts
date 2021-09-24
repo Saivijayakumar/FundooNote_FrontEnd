@@ -36,4 +36,7 @@ export class NoteServiceService {
   {
     return this.httpService.post(`${environment.baseUrl}/api/Get Trash Notes?userId=${this.userDetails.UserId}`, null, true, this.header);
   }
+  EmptyTrash(){
+    return this.httpService.delete(`${environment.baseUrl}/api/Trash?userId=${this.userDetails.UserId}`, true, this.header);
+  }
 }

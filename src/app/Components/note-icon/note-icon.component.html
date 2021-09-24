@@ -1,6 +1,6 @@
 <div class="icon">
     <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="Remainder">
-        <mat-menu #Remainder="matMenu" class="ReminderInNote" >
+        <mat-menu #Remainder="matMenu" class="ReminderInNote">
             <p class="remindHead">Remainder:</p>
             <button mat-menu-item *ngFor="let rem of reminders;let i=index" (click)="addReminder(rem)"
                 class="remindbutton"><span style="color: black;">{{rem.Text}}</span><span style="color:#bebec2">{{rem.Time}}</span></button>

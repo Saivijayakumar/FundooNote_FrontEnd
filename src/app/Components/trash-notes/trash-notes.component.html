@@ -2,7 +2,7 @@
     <p style="padding-top: 10px;padding-right: 10px;" >
         Notes in the Recycle Bin are deleted after 7 days.
     </p>
-    <button mat-stroked-button color="blue">EmptyTrash</button>
+    <button mat-stroked-button color="blue" (click)="EmptyTrash()" >EmptyTrash</button>
 </div>
 <div class="allNotes">
     <div *ngFor="let note of notes">
