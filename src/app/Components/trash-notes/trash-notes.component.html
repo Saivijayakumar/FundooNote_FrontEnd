@@ -26,7 +26,7 @@
                             <button mat-icon-button class="example-icon favorite-icon" matTooltip="Delete Forever">
                                 <mat-icon mat-list-icon class="material-icons">delete_forever</mat-icon>
                             </button>
-                            <button mat-icon-button class="example-icon favorite-icon" matTooltip="Restore">
+                            <button mat-icon-button class="example-icon favorite-icon" matTooltip="Restore" (click)="RestoreNote(note)" >
                                 <mat-icon mat-list-icon class=" material-icons">restore_from_trash</mat-icon>
                             </button>
                         </div>

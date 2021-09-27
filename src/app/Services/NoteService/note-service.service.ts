@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpServiceService } from '../HttpService/http-service.service';
@@ -38,5 +39,15 @@ export class NoteServiceService {
   }
   EmptyTrash(){
     return this.httpService.delete(`${environment.baseUrl}/api/Trash?userId=${this.userDetails.UserId}`, true, this.header);
+  }
+  SendToTrash(id:any)
+  {
+    let params = new HttpParams().set('noteId',id);
+    return this.httpService.put(`${environment.baseUrl}/api/Send To Trash`,params,true,this.header);
+  }
+  RestoreNote(id:any)
+  {
+    let params = new HttpParams().set('noteId',id);
+    return this.httpService.put(`${environment.baseUrl}/api/Restore Note`,params,true,this.header);
   }
 }

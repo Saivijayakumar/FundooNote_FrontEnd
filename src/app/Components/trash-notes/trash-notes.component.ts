@@ -22,6 +22,10 @@ export class TrashNotesComponent implements OnInit {
       console.log(this.notes);
     });
   }
+  RestoreNote(note:any)
+   {
+    this.noteService.RestoreNote(note.noteId).subscribe();
+   }
   EmptyTrash() {
     this.noteService.EmptyTrash().subscribe((status: any) => {
       this.snackBar.open(`${status.message}`, '', { duration: 3000 });

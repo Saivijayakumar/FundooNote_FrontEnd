@@ -87,7 +87,7 @@
             <div class="get_notes" *ngIf = "choice == 'archive'">
                 <app-archive-notes></app-archive-notes>
             </div>
-            <div class="get_notes" *ngIf = "choice == 'trash'">
+            <div *ngIf = "choice == 'trash'">
                 <app-trash-notes></app-trash-notes>
             </div>
         </mat-sidenav-content>

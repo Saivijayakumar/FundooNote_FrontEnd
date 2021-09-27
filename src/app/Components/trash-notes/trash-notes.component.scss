@@ -1,8 +1,10 @@
 .EmptyTrash{
     display: flex;
-    justify-content: flex-end;
-    padding-top: 10px;
+    flex-flow: row wrap;
     align-items: center;
+    justify-content: center;
+    margin-left: -11px;
+    margin-top: 15px;
 }
 .notes{
     margin-left: 20px;
@@ -59,12 +61,4 @@
     overflow: hidden !important;
     word-wrap: break-word;
     white-space: pre-wrap;
-}
-.pinLabel{
-    color: #5f6368;
-    letter-spacing: .07272727em;
-    font-family: Roboto,Arial,sans-serif;
-    font-size: .6875rem;
-    font-weight: 500;
-    line-height: 1rem;
 }

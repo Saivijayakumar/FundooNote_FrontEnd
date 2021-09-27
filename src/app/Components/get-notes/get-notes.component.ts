@@ -1,6 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { from } from 'rxjs';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
 
 @Injectable({
