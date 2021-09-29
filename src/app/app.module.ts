@@ -17,7 +17,6 @@ import { CollaboraterDialogComponent } from './Components/collaborater-dialog/co
 import { GetNotesComponent } from './Components/get-notes/get-notes.component';
 import { GetNotesIconComponent } from './Components/get-notes-icon/get-notes-icon.component';
 import { ReminderNotesComponent } from './Components/reminder-notes/reminder-notes.component';
-import { NoteCollaboraterComponent } from './Components/note-collaborater/note-collaborater.component';
 import { ArchiveNotesComponent } from './Components/archive-notes/archive-notes.component';
 import { TrashNotesComponent } from './Components/trash-notes/trash-notes.component';
 
@@ -37,7 +36,6 @@ import { TrashNotesComponent } from './Components/trash-notes/trash-notes.compon
     GetNotesComponent,
     GetNotesIconComponent,
     ReminderNotesComponent,
-    NoteCollaboraterComponent,
     ArchiveNotesComponent,
     TrashNotesComponent
   ],

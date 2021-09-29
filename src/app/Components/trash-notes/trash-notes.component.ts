@@ -26,6 +26,9 @@ export class TrashNotesComponent implements OnInit {
    {
     this.noteService.RestoreNote(note.noteId).subscribe();
    }
+   DeleteForever(note:any){
+    this.noteService.DeleteForever(note.noteId).subscribe();
+   }
   EmptyTrash() {
     this.noteService.EmptyTrash().subscribe((status: any) => {
       this.snackBar.open(`${status.message}`, '', { duration: 3000 });

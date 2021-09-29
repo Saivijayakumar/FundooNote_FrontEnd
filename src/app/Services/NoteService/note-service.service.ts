@@ -38,16 +38,29 @@ export class NoteServiceService {
     return this.httpService.post(`${environment.baseUrl}/api/Get Trash Notes?userId=${this.userDetails.UserId}`, null, true, this.header);
   }
   EmptyTrash(){
-    return this.httpService.delete(`${environment.baseUrl}/api/Trash?userId=${this.userDetails.UserId}`, true, this.header);
-  }
-  SendToTrash(id:any)
-  {
-    let params = new HttpParams().set('noteId',id);
-    return this.httpService.put(`${environment.baseUrl}/api/Send To Trash`,params,true,this.header);
+    return this.httpService.delete(`${environment.baseUrl}/api/Trash?userId=${this.userDetails.UserId}`,null,true, this.header);
   }
   RestoreNote(id:any)
   {
     let params = new HttpParams().set('noteId',id);
     return this.httpService.put(`${environment.baseUrl}/api/Restore Note`,params,true,this.header);
+  }
+  SendToTrash(id:any)
+  {    
+    let params = new HttpParams().set('noteId',id);
+    return this.httpService.put(`${environment.baseUrl}/api/Send To Trash`,params,true,this.header);
+  }
+  DeleteForever(id:any)
+  {
+    return this.httpService.delete(`${environment.baseUrl}/api/permanently?noteId=${id}`,null,true,this.header);
+  }
+  AddImage(noteId:any,file:any)
+  { 
+    console.log(file);
+    var data = new FormData();
+    data.append("image",file);
+    console.log(data);
+     return this.httpService.post(`${environment.baseUrl}/api/Image?noteId=${noteId}`,data,true,this.header); 
+      
   }
 }

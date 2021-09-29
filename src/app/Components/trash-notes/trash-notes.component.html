@@ -23,7 +23,7 @@
                     </mat-card-content>
                     <mat-card-footer *ngIf="hovered==true">
                         <div class="getIcons" >
-                            <button mat-icon-button class="example-icon favorite-icon" matTooltip="Delete Forever">
+                            <button mat-icon-button class="example-icon favorite-icon" matTooltip="Delete Forever" (click)="DeleteForever(note)" >
                                 <mat-icon mat-list-icon class="material-icons">delete_forever</mat-icon>
                             </button>
                             <button mat-icon-button class="example-icon favorite-icon" matTooltip="Restore" (click)="RestoreNote(note)" >

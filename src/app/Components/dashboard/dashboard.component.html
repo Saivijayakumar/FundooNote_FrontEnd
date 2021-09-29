@@ -53,8 +53,7 @@
                     <i mat-line>Reminders</i>
                 </mat-list-item>
                 <mat-list-item *ngFor="let label of labels" >
-                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"
-                    (mouseleave)="sidenav.toggle()">label_outline</mat-icon>
+                    <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" >label_outline</mat-icon>
                     <i mat-line>{{label.labelName}}</i>
                 </mat-list-item>
                 <mat-list-item>
