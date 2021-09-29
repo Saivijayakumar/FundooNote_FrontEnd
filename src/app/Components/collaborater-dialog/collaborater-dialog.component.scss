@@ -1,36 +1,77 @@
-.row {
+.action_buttons{
     display: flex;
-}
-.acButtons {
-    display: flex;
-    justify-content: space-between;
-    align-content: space-around;
-}
-.title {
-    margin: 5px !important;
-}
-::ng-deep .mat-dialog-container {
-    width: 600px !important;
-    border-radius: 15px !important;
-    //padding: 10px 0px 10px 0px;
-    //overflow-x: hidden;
-    //overflow-y: hidden;
-}
-input{
+    justify-content: flex-end;
     width: 100%;
-    border: unset;
-}
-button{
-    padding:10px;
-    background-color: whitesmoke;
-    border: white;
-    cursor: pointer;
-}
+    margin-top: 6%;
+   }
+   ::ng-deep .mat-dialog-container{
+    width: 600px !important;
+    border-radius: 20px;
+    }
+.user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .UserName{
+        margin-left: 10px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        p{
+            font-size: 13px;
+        }
 
-input:focus { 
+    }
+}
+.profilePic{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+ }
+
+h4{
+    font-weight: 800;
+    font-size: 13px;
+    color: #202124;
+}
+.add{
+    @extend .profilePic;
+    border:1px solid #6D6D6D;
+}
+.addperson{
+    padding: 7px 9px ;
+    color: #7F7F7F;
+}
+.person{
+    margin-left:5px ;
+    border: unset;
+    font-size: 13px;
+    color: #3c4043;
+    width:300px;
+    background-color: transparent;
+}
+.person:focus { 
     outline: none !important;
     border-color: white;
- }
- ::ng-deep #cdk-overlay-2{
-     padding:0;
- }
+ } 
+
+ .button{
+    background-color: rgba(0,0,0,0.07);
+    padding: 5px;
+    display: flex;
+    flex-flow: row-reverse;
+}
+.button > h3 
+{
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 10px 15px 5px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.button > h3:hover
+{
+    background-color: rgba(119, 118, 118, 0.2);
+}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
+import { EditLableComponent } from '../edit-lable/edit-lable.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +15,7 @@ export class DashboardComponent implements OnInit {
   labels:any = [];
   choice:string='';
 
-  constructor(private route : Router ,private noteService : NoteServiceService) { }
+  constructor(private route : Router ,private noteService : NoteServiceService,public dialog:MatDialog) { }
   UserData = JSON.parse(localStorage.getItem("UserDetails")!);
   ngOnInit(): void {
     this.getAllLabels();
@@ -30,5 +32,12 @@ export class DashboardComponent implements OnInit {
       this.labels=status.data;
       console.log(this.labels);
     });
+  }
+  Opendialog(){
+    this.dialog.open(EditLableComponent);
+  }
+  getLableNotes(label : any)
+  {
+    
   }
 }

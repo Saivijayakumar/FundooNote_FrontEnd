@@ -54,12 +54,12 @@
                 </mat-list-item>
                 <mat-list-item *ngFor="let label of labels" >
                     <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" >label_outline</mat-icon>
-                    <i mat-line>{{label.labelName}}</i>
+                    <i mat-line (click)="getLableNotes(label)">{{label.labelName}}</i>
                 </mat-list-item>
                 <mat-list-item>
                     <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"
                         (mouseleave)="sidenav.toggle()">edit</mat-icon>
-                    <i mat-line>Edit labels</i>
+                    <i mat-line (click)="Opendialog()" >Edit labels</i>
                 </mat-list-item>
                 <mat-list-item (click)="choice = 'archive'" >
                     <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"

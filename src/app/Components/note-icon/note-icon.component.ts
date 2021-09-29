@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
-import { CollaboraterDialogComponent } from '../collaborater-dialog/collaborater-dialog.component';
 import { NoteComponent } from '../note/note.component';
 
 @Component({
@@ -20,7 +19,6 @@ export class NoteIconComponent implements OnInit {
     private note: NoteComponent,
     private noteService: NoteServiceService,
     private snackBar: MatSnackBar,
-    private dialog : MatDialog,
     private route:Router
   ) { }
   ngOnInit(): void {
@@ -64,9 +62,6 @@ export class NoteIconComponent implements OnInit {
   {
     this.note.isReminder=true;
     this.note.Reminder=`${rem.Text} ${rem.Time}`
-  }
-  openDialog(){
-    this.dialog.open(CollaboraterDialogComponent)
   }
   archiveNote()
   {

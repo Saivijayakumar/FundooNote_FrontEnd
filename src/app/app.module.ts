@@ -19,6 +19,7 @@ import { GetNotesIconComponent } from './Components/get-notes-icon/get-notes-ico
 import { ReminderNotesComponent } from './Components/reminder-notes/reminder-notes.component';
 import { ArchiveNotesComponent } from './Components/archive-notes/archive-notes.component';
 import { TrashNotesComponent } from './Components/trash-notes/trash-notes.component';
+import { EditLableComponent } from './Components/edit-lable/edit-lable.component';
 
 
 
@@ -37,9 +38,10 @@ import { TrashNotesComponent } from './Components/trash-notes/trash-notes.compon
     GetNotesIconComponent,
     ReminderNotesComponent,
     ArchiveNotesComponent,
-    TrashNotesComponent
+    TrashNotesComponent,
+    EditLableComponent
   ],
-  entryComponents:[CollaboraterDialogComponent],
+  entryComponents:[CollaboraterDialogComponent,EditLableComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,

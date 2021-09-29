@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
 import { GetNotesComponent } from '../get-notes/get-notes.component';
+import { CollaboraterDialogComponent } from '../collaborater-dialog/collaborater-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-get-notes-icon',
@@ -11,7 +13,7 @@ import { GetNotesComponent } from '../get-notes/get-notes.component';
 export class GetNotesIconComponent implements OnInit {
 
   archive = false;
-  constructor(private getNote: GetNotesComponent, private snackBar: MatSnackBar, private noteService: NoteServiceService) { }
+  constructor(private getNote: GetNotesComponent, private snackBar: MatSnackBar, private noteService: NoteServiceService,private dialog : MatDialog) { }
   @Input() note: any;
   id: any;
   reminders: any[] = [{ "Text": "Later Today", "Time": "1:00" }, { "Text": "Tommorow", "Time": "8:00" }, { "Text": "Next Week", "Time": "mon,9:00" }];
@@ -46,7 +48,7 @@ export class GetNotesIconComponent implements OnInit {
     console.log(this.note);
     this.noteService.SendToTrash(this.note.noteId).subscribe();
   }
-  onFileChanged(event: any,note:any)
+  onFileChanged(event: any)
   {
     this.noteService.AddImage(this.note.noteId,event.target.files[0]).subscribe((response: any) => 
     {
@@ -57,5 +59,8 @@ export class GetNotesIconComponent implements OnInit {
         }
       },error => {
         this.snackBar.open(`${error.error.message}`, '', { duration: 4000,verticalPosition: 'bottom',horizontalPosition: 'left'});})
+  }
+  openDialog(){
+    this.dialog.open(CollaboraterDialogComponent)
   }
 }

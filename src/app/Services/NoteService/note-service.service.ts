@@ -61,6 +61,18 @@ export class NoteServiceService {
     data.append("image",file);
     console.log(data);
      return this.httpService.post(`${environment.baseUrl}/api/Image?noteId=${noteId}`,data,true,this.header); 
-      
+  }
+  GetAllCollaborator(token: any,data: any) {
+    console.log(this.header);
+    return this.httpService.post(`${environment.baseUrl}/api/Collaborator?noteId=${data}`,null,true,this.header);
+  }
+  AddCollaborator(token: any,collaboraters: any) {
+    console.log(collaboraters.receiverEmail);
+    console.log(this.header);
+    return this.httpService.post(`${environment.baseUrl}/api/Collaborator`,collaboraters,true,this.header);
+  }
+  RemoveCollaborator(token: any,data: any) {
+    console.log(this.header);
+    return this.httpService.delete(`${environment.baseUrl}/api/Collaborator?CollaboratorId=${data}`,null,true,this.header);
   }
 }
