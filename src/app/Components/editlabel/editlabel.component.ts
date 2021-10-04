@@ -24,7 +24,7 @@ export class EditlabelComponent implements OnInit {
   change:boolean=true;
   labelNames:any;
   ngOnInit(): void {
-    this.  GetAllLabels();
+    this.GetAllLabels();
   }
   clearSearchField() {
     console.log(this.labels);

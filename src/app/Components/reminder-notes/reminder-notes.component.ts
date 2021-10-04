@@ -18,11 +18,18 @@ export class ReminderNotesComponent implements OnInit {
   noteColor= "#fff";
   pinned = false;
   ExistenceOfPin:boolean = false;
+  ExistenceOfOther:boolean = false;
   isReminder=false;
   show:boolean=true;
   Reminder="";
   ngOnInit(): void {
     this.Remindernote();
+    this.datasharing.currentMessage.subscribe((change)=>{
+      if(change == true){
+        this.Remindernote();
+        this.datasharing.changeMessage(false);
+      }
+    });
   }
   pinNote()
   {
@@ -51,7 +58,7 @@ export class ReminderNotesComponent implements OnInit {
     this.noteService.RemoveReminder(id).subscribe((result:any)=>{
       if(result.status == true)
       {
-        this.datasharing.changeMessage(true);
+        this.Remindernote();
       }
     });
     this.snackBar.open('Reminder Deleted', '', {

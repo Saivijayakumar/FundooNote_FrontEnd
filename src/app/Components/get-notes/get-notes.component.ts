@@ -26,6 +26,12 @@ export class GetNotesComponent implements OnInit {
   Reminder="";
   ngOnInit(): void {
     this.getNotes();
+    this.datasharing.currentMessage.subscribe((change)=>{
+      if(change == true){
+        this.getNotes();
+        this.datasharing.changeMessage(false);
+      }
+    });
   }
   pinNote()
   {

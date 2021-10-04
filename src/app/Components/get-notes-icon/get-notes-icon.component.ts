@@ -49,6 +49,7 @@ export class GetNotesIconComponent implements OnInit {
     if (this.note.archieve) {
       console.log(this.note.noteId);
       this.noteService.UnArchieve(this.note.noteId).subscribe((status:any)=>{
+        this.datasharing.changeMessage(true);
         this.snackBar.open(`UnArchive Successfull`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });
         }, error => {
           this.snackBar.open(`${error.error.message}`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });
@@ -57,6 +58,7 @@ export class GetNotesIconComponent implements OnInit {
     else {
       console.log(this.note.noteId);
       this.noteService.Archieve(this.note.noteId).subscribe((status:any)=>{
+        this.datasharing.changeMessage(true);
         this.snackBar.open(`Archive Successfull`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });
         }, error => {
           this.snackBar.open(`${error.error.message}`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });
@@ -67,6 +69,7 @@ export class GetNotesIconComponent implements OnInit {
     console.log("noteid");
     console.log(this.note);
     this.noteService.SendToTrash(this.note.noteId).subscribe((status:any)=>{
+      this.datasharing.changeMessage(true);
       this.snackBar.open(`Sent to Trash Successfull`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });
       }, error => {
         this.snackBar.open(`${error.error.message}`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });

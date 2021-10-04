@@ -10,35 +10,38 @@ import { DataServiceService } from 'src/app/Services/DataService/data-service.se
 })
 export class ArchiveNotesComponent implements OnInit {
 
-  notes:any=[];
-  constructor(private snackBar:MatSnackBar, private noteService:NoteServiceService,private datasharing:DataServiceService) {}
-  noteColor= "#fff";
+  notes: any = [];
+  constructor(private snackBar: MatSnackBar, private noteService: NoteServiceService, private datasharing: DataServiceService) { }
+  noteColor = "#fff";
   pinned = false;
-  isReminder=false;
-  show:boolean=true;
-  Reminder="";
+  isReminder = false;
+  show: boolean = true;
+  Reminder = "";
   ngOnInit(): void {
     this.Archive();
+    this.datasharing.currentMessage.subscribe((change)=>{
+      if(change == true){
+        this.Archive();
+        this.datasharing.changeMessage(false);
+      }
+    });
   }
-  pinNote()
-  {
-    this.pinned=!this.pinned;
+  pinNote() {
+    this.pinned = !this.pinned;
   }
-  Archive()
-   {
-     console.log("getnote");
-     this.noteService.ArchiveNotes().subscribe((result: any) => {
-      this.notes=result.data;
+  Archive() {
+    console.log("getnote");
+    this.noteService.ArchiveNotes().subscribe((result: any) => {
+      this.notes = result.data;
       console.log(this.notes);
     });
-   }
-  RemoveReminder(id:any)
-  {
+  }
+  RemoveReminder(id: any) {
     this.isReminder = false;
-    this.Reminder="";
-    this.noteService.RemoveReminder(id).subscribe((result:any)=>{
-      if(result.status == true)
-      {
+    this.Reminder = "";
+    this.noteService.RemoveReminder(id).subscribe((result: any) => {
+      this.Archive();
+      if (result.status == true) {
         this.datasharing.changeMessage(true);
       }
     });
