@@ -1,0 +1,31 @@
+<mat-dialog-content >
+    <mat-card [style.background-color]="data.data.color">
+        <form [formGroup]="EditNoteForm">
+            <mat-card-title class="title">
+                <textarea cdkTextareaAutosize placeholder="Title" class="textarea" formControlName="Title"
+                    [style.background-color]="data.data.color" [(ngModel)]='data.data.title'></textarea>
+                <button mat-icon-button class="example-icon favorite-icon" (click)="pinNote(data.data)">
+                    <mat-icon mat-list-icon class="material-icons-outlined" style="color:#131212 ;" *ngIf="!data.data.pin">
+                        push_pin</mat-icon>
+                    <mat-icon mat-list-icon style="color:#353434;" *ngIf="data.data.pin">push_pin</mat-icon>
+                </button>
+            </mat-card-title>
+            <mat-card-content class="content">
+                <textarea cdkTextareaAutosize placeholder="Take a Note..." class="textarea"
+                    formControlName="Description" [style.background-color]="data.data.color" [(ngModel)]='data.data.description'></textarea>
+            </mat-card-content>
+            <mat-card-footer>
+                <span *ngIf="data.data.reminder!=null" class="reminderLabel">
+                    <mat-icon mat-list-icon class="material-icons-outlined">watch_later</mat-icon>
+                    <p>{{data.data.reminder}}</p>
+                    <mat-icon mat-list-icon class="material-icons-outlined cursor">close
+                    </mat-icon>
+                </span>
+                <div class="foot">
+                <app-get-notes-icon [note]="data.data"></app-get-notes-icon>
+                <button mat-button (click)="Close(data.data)">Close</button>
+                </div>
+            </mat-card-footer>
+        </form>
+    </mat-card>
+</mat-dialog-content>

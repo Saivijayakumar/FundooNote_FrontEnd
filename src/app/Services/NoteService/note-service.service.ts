@@ -54,6 +54,38 @@ export class NoteServiceService {
   {
     return this.httpService.delete(`${environment.baseUrl}/api/permanently?noteId=${id}`,null,true,this.header);
   }
+  Pin(id:any)
+  {
+    return this.httpService.put(`${environment.baseUrl}/api/Pin?noteId=${id}`,null,true,this.header);
+  }
+  UnPin(id:any)
+  {
+    return this.httpService.put(`${environment.baseUrl}/api/UnPin?noteId=${id}`,null,true,this.header);
+  }
+  UnArchieve(id:any)
+  {
+    return this.httpService.put(`${environment.baseUrl}/api/UnArchieve?noteId=${id}`,null,true,this.header);
+  }
+  Archieve(id:any)
+  {
+    return this.httpService.put(`${environment.baseUrl}/api/Archieve?noteId=${id}`,null,true,this.header);
+  }
+  ChangeReminder(id:any,rem:any)
+  {
+    var data;
+    console.log(id,rem);
+    data = {noteId:id,remindMe:rem};
+    return this.httpService.post(`${environment.baseUrl}/api/AddReminder`,data,true,this.header);
+  }
+  RemoveReminder(id:any)
+  {
+    console.log(id);
+    return this.httpService.put(`${environment.baseUrl}/api/RemoveReminder?noteId=${id}`,'',true,this.header);
+  }
+  UpdateNote(note:any)
+  {
+    return this.httpService.put(`${environment.baseUrl}/api/Update`,note,true,this.header);
+  }
   AddImage(noteId:any,file:any)
   { 
     console.log(file);
@@ -66,13 +98,27 @@ export class NoteServiceService {
     console.log(this.header);
     return this.httpService.post(`${environment.baseUrl}/api/Collaborator?noteId=${data}`,null,true,this.header);
   }
-  AddCollaborator(token: any,collaboraters: any) {
+  AddCollaborator(collaboraters: any) {
     console.log(collaboraters.receiverEmail);
     console.log(this.header);
     return this.httpService.post(`${environment.baseUrl}/api/Collaborator`,collaboraters,true,this.header);
   }
-  RemoveCollaborator(token: any,data: any) {
+  RemoveCollaborator(data: any) {
     console.log(this.header);
     return this.httpService.delete(`${environment.baseUrl}/api/Collaborator?CollaboratorId=${data}`,null,true,this.header);
+  }
+  GetLableNotes(label:any){
+    const params={
+      LabelName : label.labelName,
+      UserId : this.userDetails.UserId
+    }
+    return this.httpService.post(`${environment.baseUrl}/api/GetNotesofLabel`,params,true,this.header);
+  }
+  ChangeNoteColor(id:any,color:any)
+  {
+    var data;
+    console.log(id,color);
+    data = {noteId:id,color:color};
+    return this.httpService.put(`${environment.baseUrl}/api/color`,data,true,this.header);
   }
 }

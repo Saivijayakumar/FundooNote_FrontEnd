@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
-import { EditLableComponent } from '../edit-lable/edit-lable.component';
+import { EditlabelComponent } from '../editlabel/editlabel.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,7 @@ export class DashboardComponent implements OnInit {
   opened: boolean = true;
   GridView:boolean = false;
   labels:any = [];
+  labelName:any='';
   choice:string='';
 
   constructor(private route : Router ,private noteService : NoteServiceService,public dialog:MatDialog) { }
@@ -33,11 +35,12 @@ export class DashboardComponent implements OnInit {
       console.log(this.labels);
     });
   }
-  Opendialog(){
-    this.dialog.open(EditLableComponent);
-  }
-  getLableNotes(label : any)
+  openDialog()
   {
-    
-  }
+    let dialogRef =this.dialog.open(EditlabelComponent);
+    dialogRef.afterClosed().subscribe(result =>
+      {
+  
+      });
+}
 }

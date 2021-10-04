@@ -19,7 +19,9 @@ import { GetNotesIconComponent } from './Components/get-notes-icon/get-notes-ico
 import { ReminderNotesComponent } from './Components/reminder-notes/reminder-notes.component';
 import { ArchiveNotesComponent } from './Components/archive-notes/archive-notes.component';
 import { TrashNotesComponent } from './Components/trash-notes/trash-notes.component';
-import { EditLableComponent } from './Components/edit-lable/edit-lable.component';
+import { UpdateNoteComponent } from './Components/update-note/update-note.component';
+import { GetLablesComponent } from './Components/get-lables/get-lables.component';
+import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 
 
 
@@ -39,9 +41,11 @@ import { EditLableComponent } from './Components/edit-lable/edit-lable.component
     ReminderNotesComponent,
     ArchiveNotesComponent,
     TrashNotesComponent,
-    EditLableComponent
+    UpdateNoteComponent,
+    GetLablesComponent,
+    EditlabelComponent
   ],
-  entryComponents:[CollaboraterDialogComponent,EditLableComponent],
+  entryComponents:[CollaboraterDialogComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,

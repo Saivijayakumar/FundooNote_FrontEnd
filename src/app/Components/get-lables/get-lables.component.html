@@ -53,9 +53,6 @@
             <mat-card class="getNoteCard" [style.background-color]="note.color">
                 <div>
                     <mat-card-title>
-                        <div *ngIf=" note.image != null" style="padding-bottom: 0px; margin-bottom: 0px; width: 127% !important;">
-                            <img src='{{note.image}}' alt='' style="width: 77%;">
-                        </div>
                         <div class="card_title">
                             <div id="noteTitle" class="noteTitle" (click)="openDialog(note)">
                                 <h4>{{note.title}}</h4>

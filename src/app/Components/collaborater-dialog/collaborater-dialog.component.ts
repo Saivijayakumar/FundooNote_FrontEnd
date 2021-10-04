@@ -54,7 +54,7 @@ export class CollaboraterDialogComponent implements OnInit {
         ReceiverEmail : email
       };
       
-      this.noteService.AddCollaborator(this.token,updateObject).subscribe((response: any) => {
+      this.noteService.AddCollaborator(updateObject).subscribe((response: any) => {
         console.log(response);
         if(response.Status == true)
         {
@@ -77,7 +77,7 @@ export class CollaboraterDialogComponent implements OnInit {
 
  RemoveCollaborator(collaborator : any)
  {
-  this.noteService.RemoveCollaborator(this.token,collaborator.collaboratorId).subscribe((response: any) => {
+  this.noteService.RemoveCollaborator(collaborator.collaboratorId).subscribe((response: any) => {
     console.log(response);
         if(response.Status == true)
         {

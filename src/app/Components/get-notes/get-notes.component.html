@@ -1,16 +1,17 @@
 <h2 class="Title" *ngIf="ExistenceOfPin">Pinned</h2>
 <div class="allNotes">
     <div *ngFor="let note of notes">
-        <div class="notes" *ngIf="note.pin && ExistenceOfPin" id={{note.noteId}}>
+        <div class="notes" *ngIf="note.pin && ExistenceOfPin">
             <mat-card class="getNoteCard" [style.background-color]="note.color">
                 <div>
                     <mat-card-title>
-                        <div *ngIf=" note.image != null" style="padding-bottom: 0px; margin-bottom: 0px; width: 127% !important;">
+                        <div *ngIf=" note.image != null"
+                            style="padding-bottom: 0px; margin-bottom: 0px; width: 127% !important;">
                             <img src='{{note.image}}' alt='' style="width: 77%;">
                         </div>
                         <div class="card_title">
-                            
-                            <div id="noteTitle" class="noteTitle">
+
+                            <div id="noteTitle" class="noteTitle" (click)="openDialog(note)">
                                 <h4>{{note.title}}</h4>
                             </div>
                             <button mat-icon-button class="example-icon favorite-icon" (click)="pinNote()">
@@ -22,7 +23,7 @@
                         </div>
                     </mat-card-title>
                     <mat-card-content class="card_title">
-                        <div id="noteDescription" class="noteDescription">
+                        <div id="noteDescription" class="noteDescription" (click)="openDialog(note)">
                             <p>{{note.description}}</p>
                         </div>
                     </mat-card-content>
@@ -32,12 +33,12 @@
                                 <mat-icon mat-list-icon class="material-icons-outlined">watch_later</mat-icon>
                                 <p>{{note.remindMe}}</p>
                                 <mat-icon mat-list-icon class="material-icons-outlined cursor"
-                                    (click)="RemoveReminder()">close
+                                    (click)="RemoveReminder(note.noteId)">close
                                 </mat-icon>
                             </span>
                         </div>
                         <div>
-                            <app-get-notes-icon [note]="note" ></app-get-notes-icon>
+                            <app-get-notes-icon [note]="note"></app-get-notes-icon>
                         </div>
                     </mat-card-footer>
                 </div>
@@ -49,12 +50,16 @@
 <h2 class="Title" *ngIf="ExistenceOfPin">Other</h2>
 <div class="allNotes">
     <div *ngFor="let note of notes">
-        <div class="notes" *ngIf="!note.pin" id={{note.noteId}}>
+        <div class="notes" *ngIf="!note.pin">
             <mat-card class="getNoteCard" [style.background-color]="note.color">
                 <div>
                     <mat-card-title>
+                        <div *ngIf=" note.image != null"
+                            style="padding-bottom: 0px; margin-bottom: 0px; width: 127% !important;">
+                            <img src='{{note.image}}' alt='' style="width: 77%;">
+                        </div>
                         <div class="card_title">
-                            <div id="noteTitle" class="noteTitle">
+                            <div id="noteTitle" class="noteTitle" (click)="openDialog(note)">
                                 <h4>{{note.title}}</h4>
                             </div>
                             <button mat-icon-button class="example-icon favorite-icon" (click)="pinNote()">
@@ -66,22 +71,24 @@
                         </div>
                     </mat-card-title>
                     <mat-card-content class="card_title">
-                        <div id="noteDescription" class="noteDescription">
+                        <div id="noteDescription" class="noteDescription" (click)="openDialog(note)">
                             <p>{{note.description}}</p>
                         </div>
                     </mat-card-content>
                     <mat-card-footer>
-                        <div style="padding-left: 10px;">
-                            <span *ngIf="note.remindMe!=null" class="reminderLabel">
-                                <mat-icon mat-list-icon class="material-icons-outlined">watch_later</mat-icon>
-                                <p>{{note.remindMe}}</p>
-                                <mat-icon mat-list-icon class="material-icons-outlined cursor"
-                                    (click)="RemoveReminder()">close
-                                </mat-icon>
-                            </span>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <div style="padding-left: 5px;">
+                                <span *ngIf="note.remindMe!=null" class="reminderLabel">
+                                    <mat-icon mat-list-icon class="material-icons-outlined">watch_later</mat-icon>
+                                    <p>{{note.remindMe}}</p>
+                                    <mat-icon mat-list-icon class="material-icons-outlined cursor"
+                                        (click)="RemoveReminder(note.noteId)">close
+                                    </mat-icon>
+                                </span>
+                            </div>
                         </div>
                         <div>
-                            <app-get-notes-icon [note]="note" ></app-get-notes-icon>
+                            <app-get-notes-icon [note]="note"></app-get-notes-icon>
                         </div>
                     </mat-card-footer>
                 </div>

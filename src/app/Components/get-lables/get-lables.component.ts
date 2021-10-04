@@ -1,40 +1,35 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
-import { DataServiceService } from 'src/app/Services/DataService/data-service.service';
 
-@Injectable({
-  providedIn:'root'
-})
 @Component({
-  selector: 'app-get-notes',
-  templateUrl: './get-notes.component.html',
-  styleUrls: ['./get-notes.component.scss']
+  selector: 'app-get-lables',
+  templateUrl: './get-lables.component.html',
+  styleUrls: ['./get-lables.component.scss']
 })
-export class GetNotesComponent implements OnInit {
-
+export class GetLablesComponent implements OnInit {
+  @Input() label: any;
   notes:any=[];
-  constructor(private snackBar:MatSnackBar, private noteService:NoteServiceService,public dialog: MatDialog,private datasharing:DataServiceService) {}
+  constructor(private snackBar:MatSnackBar, private noteService:NoteServiceService,public dialog: MatDialog) {}
   noteColor= "#fff";
   ExistenceOfPin:boolean = false;
   pinned = false;
   isReminder=false;
   show:boolean=true;
-  labelicon:boolean = false;
   Reminder="";
   ngOnInit(): void {
-    this.getNotes();
+    this.getLables();
   }
   pinNote()
   {
     this.pinned=!this.pinned;
   }
-  getNotes()
+  getLables()
    {
      console.log("getnote");
-     this.noteService.GetNote().subscribe((result: any) => {
+     this.noteService.GetLableNotes(this.label).subscribe((result: any) => {
       this.notes=result.data;
       for(var i of this.notes)
       {
@@ -51,12 +46,7 @@ export class GetNotesComponent implements OnInit {
   {
     this.isReminder = false;
     this.Reminder="";
-    this.noteService.RemoveReminder(id).subscribe((result:any)=>{
-      if(result.status == true)
-      {
-        this.datasharing.changeMessage(true);
-      }
-    });
+    this.noteService.RemoveReminder(id).subscribe();
     this.snackBar.open('Reminder Deleted', '', {
       duration: 2000,
       verticalPosition: 'bottom',

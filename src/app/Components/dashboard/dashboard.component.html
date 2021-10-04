@@ -52,14 +52,14 @@
                         (mouseleave)="sidenav.toggle()"  >notifications_none</mat-icon>
                     <i mat-line>Reminders</i>
                 </mat-list-item>
-                <mat-list-item *ngFor="let label of labels" >
+                <mat-list-item *ngFor="let label of labels"  (click)="choice = 'Lable';labelName=label">
                     <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" >label_outline</mat-icon>
-                    <i mat-line (click)="getLableNotes(label)">{{label.labelName}}</i>
+                    <i mat-line>{{label.labelName}}</i>
                 </mat-list-item>
                 <mat-list-item>
                     <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"
                         (mouseleave)="sidenav.toggle()">edit</mat-icon>
-                    <i mat-line (click)="Opendialog()" >Edit labels</i>
+                    <i mat-line (click)="openDialog()" >Edit labels</i>
                 </mat-list-item>
                 <mat-list-item (click)="choice = 'archive'" >
                     <mat-icon mat-list-icon class="sidenavimg material-icons-outlined" (mouseenter)="sidenav.toggle()"
@@ -88,6 +88,9 @@
             </div>
             <div *ngIf = "choice == 'trash'">
                 <app-trash-notes></app-trash-notes>
+            </div>
+            <div *ngIf = "choice == 'Lable'">
+                <app-get-lables [label] = "labelName" ></app-get-lables>
             </div>
         </mat-sidenav-content>
     </mat-sidenav-container>

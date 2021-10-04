@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditLableComponent } from './edit-lable.component';
+import { GetLablesComponent } from './get-lables.component';
 
-describe('EditLableComponent', () => {
-  let component: EditLableComponent;
-  let fixture: ComponentFixture<EditLableComponent>;
+describe('GetLablesComponent', () => {
+  let component: GetLablesComponent;
+  let fixture: ComponentFixture<GetLablesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditLableComponent ]
+      declarations: [ GetLablesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditLableComponent);
+    fixture = TestBed.createComponent(GetLablesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

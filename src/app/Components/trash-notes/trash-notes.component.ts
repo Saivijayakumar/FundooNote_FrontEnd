@@ -24,10 +24,18 @@ export class TrashNotesComponent implements OnInit {
   }
   RestoreNote(note:any)
    {
-    this.noteService.RestoreNote(note.noteId).subscribe();
+    this.noteService.RestoreNote(note.noteId).subscribe((status:any)=>{
+      this.snackBar.open(`Restore Note Successfull`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });
+      }, error => {
+        this.snackBar.open(`${error.error.message}`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });
+      });
    }
    DeleteForever(note:any){
-    this.noteService.DeleteForever(note.noteId).subscribe();
+    this.noteService.DeleteForever(note.noteId).subscribe((status:any)=>{
+      this.snackBar.open(`Delete Note Forever Successfull`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });
+      }, error => {
+        this.snackBar.open(`${error.error.message}`, '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left' });
+      });
    }
   EmptyTrash() {
     this.noteService.EmptyTrash().subscribe((status: any) => {

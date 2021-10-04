@@ -63,3 +63,16 @@ button .mat-menu-item {
 ::ng-deep .mat-icon-button {
     width: 37px !important;
 }
+.label-subMenu{
+    padding-left: 10px;
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    input{
+        border: none;
+        outline: none;
+        border-radius: 0px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/app/Services/NoteService/note-service.service';
+import { DataServiceService } from 'src/app/Services/DataService/data-service.service';
 
 @Component({
   selector: 'app-archive-notes',
@@ -10,7 +11,7 @@ import { NoteServiceService } from 'src/app/Services/NoteService/note-service.se
 export class ArchiveNotesComponent implements OnInit {
 
   notes:any=[];
-  constructor(private snackBar:MatSnackBar, private noteService:NoteServiceService) {}
+  constructor(private snackBar:MatSnackBar, private noteService:NoteServiceService,private datasharing:DataServiceService) {}
   noteColor= "#fff";
   pinned = false;
   isReminder=false;
@@ -31,10 +32,16 @@ export class ArchiveNotesComponent implements OnInit {
       console.log(this.notes);
     });
    }
-  RemoveReminder()
+  RemoveReminder(id:any)
   {
     this.isReminder = false;
     this.Reminder="";
+    this.noteService.RemoveReminder(id).subscribe((result:any)=>{
+      if(result.status == true)
+      {
+        this.datasharing.changeMessage(true);
+      }
+    });
     this.snackBar.open('Reminder Deleted', '', {
       duration: 2000,
       verticalPosition: 'bottom',
